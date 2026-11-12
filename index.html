@@ -203,7 +203,7 @@ html{scroll-behavior:smooth}::selection{background:var(--c);color:#fff}button:fo
 <button id="go"><span id="gl">Open case (Space)</span><i id="bar"></i></button>
 <div id="msg"></div>
 <button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button><button id="mus" class="reset">Music: off</button><button id="share" class="reset">📣 Share my best</button>
-<div id="beam"></div><canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
+<div id="beam"></div><canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to google (not working) to also sync it to your account.</div>
 <div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck. Every 40th case is a Bonus Case (×4 luck) and the Mutation Lab boosts mutation chances. 1 in 10 cases is a Throwback with no luck applied, so Commons never disappear. Gain XP every roll to level up (+2% luck per level) and find Relics at random.</div>
 <div class="up" id="up"></div>
 <section class="lb progression" id="progression"><h2>🧬 Long-term progression</h2><div id="progbody"></div></section>
@@ -594,7 +594,7 @@ function push(){if(!lbDB||!uid||S.best<=0)return;clearTimeout(pushT);pushT=setTi
 $("nsave").addEventListener("click",function(){nick=$("nick").value.trim().slice(0,14)||"Anon";try{localStorage.setItem("chrnick",nick)}catch(e){}push();pushOwn();say("Name saved","#f5c542")});
 (async function(){try{
 var db=await claude.use("db"),user=await claude.use("user");
-if(!db||!user){lbStatus("Sign in to claude.ai to use the online leaderboard.");return}
+if(!db||!user){lbStatus("Sign in to google (not working) to use the online leaderboard.");return}
 uid=await user.id();idPre=await hpre(uid);lbDB=db;usr=user;loadCloud();
 var t=setTimeout(function(){lbStatus("Can’t reach the leaderboard yet…")},10000);
 db.collection("scores").orderBy("best","desc").limit(10).onSnapshot(function(s){clearTimeout(t);renderLB(s.docs);lbStatus(s.empty?"No scores yet. Be the first!":"Live · top 10")},function(){clearTimeout(t);lbStatus("Leaderboard unavailable.")});
