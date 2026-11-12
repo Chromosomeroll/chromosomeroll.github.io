@@ -15,7 +15,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 body{margin:0;min-height:100%;background:radial-gradient(ellipse at 50% 0,color-mix(in srgb,var(--c) 14%,var(--bg)),var(--bg) 60%) fixed;color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;transition:background .3s}
 main{max-width:660px;margin:0 auto;padding:20px 16px 40px;text-align:center}
 h1{font-size:1.6rem;margin:8px 0 2px}.evb{display:none;margin-bottom:10px;padding:7px;border-radius:10px;background:var(--gold);color:#111;font-weight:800;font-size:.85rem;animation:pulse 1.4s ease-in-out infinite}.evb.on{display:block}.reel{position:relative;height:106px;overflow:hidden;border-radius:12px;background:var(--bg);border:1px solid var(--bd);margin-bottom:10px}.reel:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--bg),transparent 16%,transparent 84%,var(--bg))}.strip{position:absolute;left:0;top:0;height:100%;display:flex;gap:6px;padding:7px 6px;will-change:transform}.it{flex:0 0 88px;height:92px;border-radius:8px;background:linear-gradient(180deg,color-mix(in srgb,var(--k) 12%,var(--card)),color-mix(in srgb,var(--k) 42%,var(--card)));border-bottom:5px solid var(--k);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:.62rem;font-weight:700;line-height:1.1;padding:0 3px}.it span{font-size:1.7rem;filter:drop-shadow(0 0 6px var(--k))}.it.win{outline:2px solid var(--k);box-shadow:0 0 20px var(--k)}.ptr{position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;background:#ffd23f;z-index:2;box-shadow:0 0 10px #ffd23f}@keyframes pulse{50%{opacity:.75}}.bulbs{height:10px;margin:6px 0 10px;background:radial-gradient(circle,var(--gold) 3px,transparent 4px) 0 0/20px 10px;animation:blink 1s steps(2) infinite}@keyframes blink{50%{filter:brightness(.35)}}.bets{display:flex;gap:6px;margin:12px 0 0}.bets button{margin:0;padding:10px 4px;font-size:.8rem;background:var(--card);color:var(--fg);border:2px solid var(--bd)}.bets button.on{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px -2px var(--gold)}.lb{margin-top:18px;background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:10px;text-align:left}.lb h2{margin:0 0 6px;font-size:1rem;color:var(--gold)}.lb ol{margin:6px 0 0;padding:0;list-style:none;font-size:.85rem}.lb li{display:flex;justify-content:space-between;gap:8px;padding:4px 2px;border-bottom:1px solid var(--bd)}.lb li.me{color:var(--gold);font-weight:800}.lb input{font:inherit;background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;width:55%}.lb .st{color:var(--mut);font-size:.75rem;margin-top:6px}.win{color:#2fd37b!important}.lose{color:#ff5d73!important}
-.sub{color:var(--mut);font-size:.9rem;margin:0 0 16px}
+.sub{color:var(--mut);font-size:.9rem;margin:0 0 16px}.stat:has(#dna),.stat:has(#lk),.cd .bst,.cd .eqb{display:none}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin-bottom:14px}
 .stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 4px}
 .stat b{display:block;font-size:1.02rem;overflow-wrap:anywhere}
@@ -148,7 +148,7 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 <body>
 <main>
 <h1>🧬 Chromosome Case</h1><div class="hint" style="margin-top:-2px">Made by Jace Glover</div>
-<p class="sub">Press SPACE or tap the card to open a case. Land the golden Omega. Mutations, wear and world events shake up every drop.</p>
+<p class="sub">Press SPACE or tap the card to open a case. Land the golden Omega. Mutations and wear shake up every drop.</p>
 <div class="evb" id="evb"></div><div class="stats">
 <div class="stat"><b id="best">0</b><span>High score</span></div>
 <div class="stat"><b id="dna">0</b><span>DNA</span></div>
@@ -170,12 +170,12 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 <div id="msg"></div>
 <button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button>
 <canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
-<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 20, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck.</div>
+<div class="hint">Press A for auto-roll.</div>
 <div class="up" id="up"></div>
-<div class="hint" style="margin-top:14px">Odds below are base odds. Luck multiplies your chances, and it never caps out.</div>
+<div class="hint" style="margin-top:14px">Odds below are the chance of each drop.</div>
 <section class="lb"><h2>🏅 Achievements <span id="acount"></span></h2><div class="st" id="strk"></div><div class="ach" id="ach"></div></section>
 
-<section class="lb"><h2>🃏 Card Collection <span id="ccount"></span></h2><div class="st" id="eqinfo"></div><div class="cards" id="cards"></div><div class="st">Every Epic or better drop (or Radioactive+ mutation) mints a numbered, certified card with luck and DNA boosts: the rarer, the stronger. Equip cards to use their boosts (more slots with each Evolve). Your top 24 are shown. Download one as an image; it carries a certificate code that proves who minted it.</div></section><section class="lb"><h2>🔍 Verify a Card</h2><div><input id="vcode" placeholder="Certificate code"> <button class="reset" id="vgo">Verify</button></div><div class="st" id="vres">Paste the certificate code from a card to see who really minted it.</div></section>
+<section class="lb"><h2>🃏 Card Collection <span id="ccount"></span></h2><div class="st" id="eqinfo"></div><div class="cards" id="cards"></div><div class="st">Every Epic or better drop (or Radioactive+ mutation) mints a numbered, certified card. Your top 24 are shown. Download one as an image; it carries a certificate code that proves who minted it.</div></section><section class="lb"><h2>🔍 Verify a Card</h2><div><input id="vcode" placeholder="Certificate code"> <button class="reset" id="vgo">Verify</button></div><div class="st" id="vres">Paste the certificate code from a card to see who really minted it.</div></section>
 <section class="lb"><h2>🏆 Online High Scores</h2><div><input id="nick" maxlength="14" placeholder="Your name"> <button class="reset" id="nsave">Save name</button></div><ol id="lbl"></ol><div class="st" id="lst">Connecting…</div></section><div class="dex" id="dex"></div><div class="dex" id="mdex"></div>
 <button class="reset" id="reset">Reset progress</button>
 <div class="hint" style="margin-top:18px">🧬 Chromosome Case · Made by Jace Glover · your progress, cards and scores follow your account.</div>
@@ -196,8 +196,8 @@ var TIERS=[
 {n:"Omega",o:1.5e12,lo:1e20,hi:1e24,c:"#ff7a2e"},
 {n:"Glover",o:1e18,lo:1e24,hi:1e30,c:"#e8f4ff"}
 ];
-var S={best:0,rolls:0,rare:-1,found:[]};
-try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number")S=p}}catch(e){}
+var VER=2,S={ver:VER,best:0,rolls:0,rare:-1,found:[]};
+try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number"&&p.ver===VER)S=p}}catch(e){}
 S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
 function save(){try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
 function $(i){return document.getElementById(i)}
@@ -218,12 +218,12 @@ b+='<circle cx="85" cy="100" r="12" fill="'+c+'" stroke="var(--card)" stroke-wid
 $("chr").innerHTML=b;
 }
 /* upgrades: luck has no cap */
-function evoMul(){return Math.pow(2,S.evo)}
+function evoMul(){return 1}
 function lvMul(n){return Math.pow(1.3,Math.min(n,15))*Math.pow(1.1,Math.max(0,n-15))}
 function mileMul(){return (1+.06*S.found.length+.04*Object.keys(S.mut).length)*(1+.03*(S.ach||[]).length)}
-function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/60)*eqLuck()*(hot>0?1.25:1)*(ev&&ev.l||1)}
-function yMul(){return Math.pow(1.25,S.yld)*eqDna()*(ev&&ev.y||1)}
-function cdSec(){return Math.max(0.2,1.5*Math.pow(0.88,S.cd)*(ev&&ev.cd||1))}
+function luckMul(){return 1}
+function yMul(){return 1}
+function cdSec(){return 1.5}
 var CMAX=16;
 var ES=function(){return Math.pow(3,S.evo)},COST={l:function(){return 100*Math.pow(2.5,S.luck)*ES()},c:function(){return 200*Math.pow(3,S.cd)*ES()},y:function(){return 200*Math.pow(2.6,S.yld)*ES()}};
 var KEY={l:"luck",c:"cd",y:"yld"};
@@ -270,7 +270,7 @@ draw(t);
 var el=$("chr");el.style.filter=r.md>=0?MODS[r.md].f:"";el.classList.remove("pop");void el.getBoundingClientRect();el.classList.add("pop");
 hot=r.k>=3?5:Math.max(0,hot-1);var gain=r.s*yMul()*evoMul();
 $("tier").textContent=(r.md>=0?MODS[r.md].n+" ":"")+t.n;$("odds").textContent=oddsText(t.o)+(r.md>=0?" + "+oddsText(MODS[r.md].o)+" mutation":"")+" · "+WN[r.wi]+" ("+r.fl.toFixed(4)+") · "+quip(r.k);reveal(r.k);if(r.md>=0){say(MODS[r.md].n.toUpperCase()+" MUTATION! ×"+fmt(MODS[r.md].m),MODS[r.md].c);if(r.md>=2)boom(100,MODS[r.md].c)}
-$("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"")+" · pity ×"+xf(1+(S.pm||0)/60)+(hot>0?" · 🔥 hot streak ×1.25 ("+hot+")":"");
+$("score").textContent=sc(r.s);$("gain").textContent="";
 $("new").classList.toggle("on",nb);
 var st=$("stage");st.classList.remove("flash");if(r.k>=3){void st.getBoundingClientRect();st.classList.add("flash")}
 S.dna+=gain;stats();dex();hist();ups();save();if(nb)push();
@@ -278,7 +278,7 @@ busy=false;
 cdEnd=performance.now()+cdSec()*1000+pen;pen=0;cdLoop();
 if(auto)setTimeout(autoRoll,cdSec()*1000+100);
 }
-function ups(){
+function ups(){$("up").innerHTML="";return;
 var h="";
 function card(k,title,desc,lvl,max){
 var cost=COST[k](),nd=gate(k),lock=nd>S.rare,can=S.dna>=cost&&!max&&!lock;
@@ -364,7 +364,7 @@ $("stage").addEventListener("click",function(){press(false)});
 $("reset").addEventListener("click",function(){
 if(!this.dataset.arm){this.dataset.arm=1;this.textContent="Click again to erase everything";var b=this;setTimeout(function(){delete b.dataset.arm;b.textContent="Reset progress"},3000);return}
 delete this.dataset.arm;this.textContent="Reset progress";
-if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
+if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={ver:VER,best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
 $("tier").textContent="Ready";$("odds").textContent="Press space to begin";$("score").textContent="0";$("gain").textContent="";$("new").classList.remove("on");
 document.documentElement.style.setProperty("--c","#7a8099");draw(TIERS[0]);idle();
 });
@@ -396,7 +396,7 @@ g.font="800 50px "+F;g.fillText(((c.md>=0?MODS[c.md].n+" ":"")+t.n).toUpperCase(
 g.font="800 72px "+F;g.fillText(sc(c.s),W/2,505,520);
 g.font="600 26px "+F;g.fillText(WN[c.wi]+" · float "+c.fl.toFixed(4),W/2,560,520);
 g.fillText("Card #"+String(c.n).padStart(5,"0")+" · "+c.d,W/2,600,520);
-g.font="800 28px "+F;g.fillText("🍀 ×"+xf(cLuck(c))+"   💠 ×"+xf(cDna(c)),W/2,642,520);
+g.font="800 28px "+F;
 g.font="800 34px "+F;g.fillText("Owner: "+(nick||"Player"),W/2,692,520);
 g.font="600 24px monospace";g.fillText(c.id?"CERT "+fid(c.id):"NOT CERTIFIED (offline)",W/2,735,520);
 g.font="500 17px "+F;g.fillText("Verify this code in the Chromosome Case page",W/2,775,520);g.font="600 15px "+F;g.fillText("Made by Jace Glover",W/2,805,520);
@@ -422,7 +422,7 @@ function norm(){S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.ev
 function cloudSave(){if(!lbDB||!uid||!cloudReady||cloudT)return;cloudT=setTimeout(function(){cloudT=0;cloudNow()},4000)}
 function cloudNow(){if(!lbDB||!uid)return;lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
 async function loadCloud(){
-try{var s=await lbDB.doc("data/users/"+uid+"/progress").get(),d=s.exists&&s.data(),cr=d&&d.S?(d.S.rolls||0):-1;
+try{var s=await lbDB.doc("data/users/"+uid+"/progress").get(),d=s.exists&&s.data(),cr=d&&d.S&&d.S.ver===VER?(d.S.rolls||0):-1;
 if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$("nick").value=nick;try{localStorage.setItem("chrnick",nick)}catch(e){}}try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}stats();dex();hist();ups();cloudMsg("☁️ Progress loaded from your account");pushOwn();push()}
 else if(S.rolls>cr)cloudNow();else cloudMsg("☁️ Progress synced to your account")}
 catch(e){cloudMsg("Cloud save unavailable. Progress is saved in this browser.")}
@@ -450,13 +450,11 @@ var hot=0,ACH=[
 {n:"GLOVER",d:"Find the Glover",f:function(){return S.found.indexOf(11)>-1}},
 {n:"Mutation Hunter",d:"Find 3 mutations",f:function(){return Object.keys(S.mut).length>=3}},
 {n:"Collector",d:"Own 10 cards",f:function(){return S.cards.length>=10}},
-{n:"Upgrade Junkie",d:"Reach Luck level 15",f:function(){return S.luck>=15}},
-{n:"Evolved",d:"Evolve once",f:function(){return S.evo>=1}},
 {n:"Regular",d:"Play 3 days in a row",f:function(){return (S.streak||0)>=3}},
 {n:"Dedicated",d:"Play 7 days in a row",f:function(){return (S.streak||0)>=7}}];
 function ach(){S.ach=S.ach||[];var nw=[];ACH.forEach(function(a){if(S.ach.indexOf(a.n)<0&&a.f()){S.ach.push(a.n);nw.push(a.n)}});
-if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+" (+3% luck each)","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
-$("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days · each achievement adds +3% permanent luck";
+if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+"","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
+$("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days";
 $("ach").innerHTML=ACH.map(function(a){var on=S.ach.indexOf(a.n)>-1;return '<div class="'+(on?"on":"")+'">'+(on?"✅ ":"🔒 ")+esc(a.n)+'<small>'+esc(a.d)+'</small></div>'}).join("")}
 function dkey(t){var d=new Date(t);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
 function daily(){var k=dkey(Date.now());if(S.day===k)return;S.streak=S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1;S.day=k;dex();save()}
@@ -465,14 +463,14 @@ function startScreen(){
 var o=$("start"),ready=S.day!==dkey(Date.now()),streak=ready?(S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1):(S.streak||0),hook,nx=-1;
 for(var i=0;i<TIERS.length;i++)if(S.found.indexOf(i)<0){nx=i;break}
 if(ready&&streak>1)hook="🔥 Day "+streak+" streak! Keep it going.";
-else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/60)+" is building. A Mythic is overdue…";
+
 else hook=nx<0?"You’ve found every tier. Chase mutations and cards!":"Next tier to discover: ??? · "+oddsText(TIERS[nx].o);
 o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="by">Made by Jace Glover</div>'}
 function play(){if(started)return;started=true;var o=$("start");o.classList.add("out");setTimeout(function(){o.style.display="none"},550);snd(523,.15,"triangle",.1);snd(784,.25,"triangle",.1,.1);daily()}
 $("start").addEventListener("click",function(e){if(e.target.closest("#play"))play()});
 function esc(s){return String(s).replace(/[&<>"']/g,function(m){return "&#"+m.charCodeAt(0)+";"})}
 function cmpCard(x,y){return y.k-x.k||y.md-x.md||y.s-x.s}
-function cards(){var a=S.cards.slice().sort(cmpCard).slice(0,24);$("ccount").textContent="· "+S.cards.length;$("eqinfo").textContent="Equipped "+S.eq.length+"/"+eqSlots()+" · card luck ×"+xf(eqLuck())+" · card DNA ×"+xf(eqDna());$("cards").innerHTML=a.length?(shown=a).map(function(c,i){var t=TIERS[c.k];return '<div class="cd t'+c.k+(S.eq.indexOf(c.n)>-1?" eqd":"")+'" style="--k:'+t.c+'"><span class="sn">#'+String(c.n).padStart(5,"0")+'</span><i>🧬</i><b>'+(c.md>=0?MODS[c.md].n+" ":"")+t.n+'</b><em>'+sc(c.s)+'</em><strong class="bst">🍀 ×'+xf(cLuck(c))+' · 💠 ×'+xf(cDna(c))+'</strong><small>'+WN[c.wi]+' · '+c.fl.toFixed(4)+'<br>'+esc(c.d)+'<br>🔒 '+(c.id?fid(c.id):"certifying…")+'</small><u>👤 '+esc(nick||"You")+'</u><p>'+owners(c)+'</p><button class="eqb" data-i="'+i+'">'+(S.eq.indexOf(c.n)>-1?"✓ Equipped":"Equip")+'</button><button class="dl" data-i="'+i+'">⬇ Download</button></div>'}).join(""):'<div class="st">No cards yet. Pull an Epic or better!</div>'}
+function cards(){var a=S.cards.slice().sort(cmpCard).slice(0,24);$("ccount").textContent="· "+S.cards.length;$("eqinfo").textContent="";$("cards").innerHTML=a.length?(shown=a).map(function(c,i){var t=TIERS[c.k];return '<div class="cd t'+c.k+(S.eq.indexOf(c.n)>-1?" eqd":"")+'" style="--k:'+t.c+'"><span class="sn">#'+String(c.n).padStart(5,"0")+'</span><i>🧬</i><b>'+(c.md>=0?MODS[c.md].n+" ":"")+t.n+'</b><em>'+sc(c.s)+'</em><strong class="bst">🍀 ×'+xf(cLuck(c))+' · 💠 ×'+xf(cDna(c))+'</strong><small>'+WN[c.wi]+' · '+c.fl.toFixed(4)+'<br>'+esc(c.d)+'<br>🔒 '+(c.id?fid(c.id):"certifying…")+'</small><u>👤 '+esc(nick||"You")+'</u><p>'+owners(c)+'</p><button class="eqb" data-i="'+i+'">'+(S.eq.indexOf(c.n)>-1?"✓ Equipped":"Equip")+'</button><button class="dl" data-i="'+i+'">⬇ Download</button></div>'}).join(""):'<div class="st">No cards yet. Pull an Epic or better!</div>'}
 function itm(t,n){return '<div class="it t'+t+'" style="--k:'+TIERS[t].c+'"><span>🧬</span>'+n+'</div>'}
 function idle(){$("strip").innerHTML=TIERS.map(function(t,i){return itm(i,t.n)}).join("");$("strip").style.transform="translateX("+(-(6+5*94+44-$("reel").clientWidth/2))+"px)"}
 function spinReel(r,dur,done){
@@ -484,7 +482,7 @@ var end=6+W*94+44-vw/2+(Math.random()*2-1)*38,t0=performance.now(),last=-1;
 }
 function mdex(){$("mdex").innerHTML=MODS.map(function(m,i){var g=S.mut[i];return '<div class="'+(g?"got":"")+'" style="--k:'+m.c+'">'+(g?m.n+" ×"+fmt(m.m)+" · ×"+fmt(g):"???")+'<small>Mutation · '+oddsText(m.o)+'</small></div>'}).join("")}
 function evUI(){var e=$("evb");if(!ev){e.className="evb";return}e.textContent=ev.n+" · "+[ev.l&&"Luck ×"+ev.l,ev.y&&"DNA ×"+ev.y,ev.cd&&"Cooldown ×"+ev.cd].filter(Boolean).join(", ")+" · "+Math.max(0,Math.ceil((evEnd-Date.now())/1000))+"s";e.className="evb on"}
-setInterval(function(){var n=Date.now(),ch=false;if(ev&&n>=evEnd){ev=null;ch=true}if(!ev&&Math.random()<1/120){ev=EV[Math.floor(Math.random()*EV.length)];evEnd=n+(30+Math.random()*30)*1000;say(ev.n+" has begun!","#f0a020");snd(660,.2,"triangle",.1);snd(880,.3,"triangle",.1,.15);ch=true}if(ch){stats();ups()}evUI()},1000);
+setInterval(function(){var n=Date.now(),ch=false;if(ev&&n>=evEnd){ev=null;ch=true}if(!ev&&Math.random()<0){ev=EV[Math.floor(Math.random()*EV.length)];evEnd=n+(30+Math.random()*30)*1000;say(ev.n+" has begun!","#f0a020");snd(660,.2,"triangle",.1);snd(880,.3,"triangle",.1,.15);ch=true}if(ch){stats();ups()}evUI()},1000);
 var lbDB=null,uid=null,nick="",pushT;
 try{nick=localStorage.getItem("chrnick")||""}catch(e){}
 $("nick").value=nick;
