@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chromosome Case</title>
-<meta name="description" content="Open chromosome cases, chase mutations, collect certified cards and climb the online leaderboard. By Jace Glover"><meta name="theme-color" content="#0d0f1c">
+<meta name="description" content="Open chromosome cases, chase mutations, collect certified cards and climb the online leaderboard."><meta name="theme-color" content="#0d0f1c">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f5fa;--card:#fff;--fg:#14172b;--mut:#6b7090;--bd:#dde0ee;--gold:#d98a00;--c:#7a8099;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -95,15 +95,59 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 .cd em{display:block;font-style:normal;font-size:1.1rem;font-weight:800;margin:2px 0}
 .cd small{display:block;font-size:.62rem;opacity:.85;line-height:1.4;color:#fff;margin:0}.cd u{display:block;text-decoration:none;font-weight:800;font-size:.85rem;margin-top:6px;overflow-wrap:anywhere}.cd p{margin:5px 0 0;font-size:.62rem;font-weight:700;background:rgba(0,0,0,.38);border-radius:99px;padding:3px 6px}
 .cd .sn{position:absolute;top:4px;right:6px;font-size:.55rem;opacity:.75}
-.cd .dl{width:auto;margin:7px 0 0;padding:5px 10px;font-size:.65rem;background:rgba(255,255,255,.22);color:#fff;border-radius:8px;position:relative;z-index:1}
+.cd .dl,.cd .eqb{width:auto;margin:7px 0 0;padding:5px 10px;font-size:.65rem;background:rgba(255,255,255,.22);color:#fff;border-radius:8px;position:relative;z-index:1}
 #vcode{font:inherit;background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;width:60%}
-.pc{display:inline-flex;align-items:center;background:var(--bg);border:1px solid var(--bd);border-left:4px solid var(--k);border-radius:8px;padding:4px 8px;margin:3px;font-size:.78rem;font-weight:700}
-#onl.on{color:var(--gold)}
+#mdex{margin-top:36px;margin-bottom:36px;gap:12px}
+.cd:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit}
+.cd i,.cd b,.cd em,.cd small,.cd u,.cd p{position:relative;z-index:1}
+.t6{animation:glitch 2.6s steps(1) infinite}@keyframes glitch{0%,91%,100%{transform:none;filter:none}92%{transform:translate(-3px,1px);filter:hue-rotate(70deg)}94%{transform:translate(3px,-1px);filter:hue-rotate(-70deg)}96%{transform:translate(-1px,0)}}
+.t7{animation:gp 2.4s ease-in-out infinite}@keyframes gp{50%{box-shadow:0 0 34px 2px var(--k),0 0 60px -10px var(--k)}}
+.t7:after{background:repeating-linear-gradient(60deg,transparent 0 10px,rgba(255,255,255,.09) 10px 12px);background-size:60px 60px;animation:slide 3s linear infinite}@keyframes slide{to{background-position:60px 0}}
+.t8{background:radial-gradient(circle at 30% 20%,rgba(120,255,160,.35),transparent 50%),radial-gradient(circle at 80% 80%,rgba(80,120,255,.4),transparent 55%),linear-gradient(145deg,#0a1f14,#061024);background-size:200% 200%;animation:neb 8s ease-in-out infinite alternate}@keyframes neb{to{background-position:100% 100%}}
+.t8:after{background:radial-gradient(1.5px 1.5px at 12% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 70% 15%,#fff,transparent),radial-gradient(2px 2px at 40% 55%,#cfe,transparent),radial-gradient(1.5px 1.5px at 85% 70%,#fff,transparent),radial-gradient(2px 2px at 25% 85%,#fff,transparent),radial-gradient(1.5px 1.5px at 60% 90%,#cfe,transparent);animation:twinkle 2.2s ease-in-out infinite}@keyframes twinkle{50%{opacity:.25}}
+.t9{background:radial-gradient(circle at 50% 50%,#000 0 13%,transparent 14%),#0b0800}
+.t9:after{inset:-40%;opacity:.6;background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(255,225,77,.8),transparent 30%,rgba(255,140,0,.7),transparent 60%,rgba(255,225,77,.8),transparent);-webkit-mask:radial-gradient(circle at 50% 50%,transparent 11%,#000 13%,#000 36%,transparent 60%);mask:radial-gradient(circle at 50% 50%,transparent 11%,#000 13%,#000 36%,transparent 60%);animation:rz 5s linear infinite}@keyframes rz{to{transform:rotate(360deg)}}
+.t10{background:linear-gradient(0deg,#6a1200,#1a0500 70%);animation:omg 1.6s ease-in-out infinite}@keyframes omg{50%{box-shadow:0 0 38px 3px #ff7a2e}}
+.t10:after{mix-blend-mode:screen;background:radial-gradient(60px 90px at 20% 110%,rgba(255,160,40,.8),transparent),radial-gradient(70px 110px at 55% 115%,rgba(255,90,20,.9),transparent),radial-gradient(60px 90px at 90% 110%,rgba(255,200,60,.8),transparent);animation:flame .9s ease-in-out infinite alternate}@keyframes flame{from{transform:translateY(6px) scaleY(.9)}to{transform:translateY(-8px) scaleY(1.15)}}
+.t11{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}@keyframes gl{50%{box-shadow:0 0 30px 4px #fff,0 0 60px 10px rgba(255,0,255,.5);translate:0 -3px}}
+.t11:after{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent),radial-gradient(2px 2px at 50% 80%,#fff,transparent);background-size:300% 100%,auto,auto,auto;animation:sheen 3s linear infinite}@keyframes sheen{from{background-position:150% 0,0 0,0 0,0 0}to{background-position:-50% 0,0 0,0 0,0 0}}
+.t11 i{animation:hue 4s linear infinite}@keyframes hue{from{filter:hue-rotate(0deg) drop-shadow(0 0 8px #fff)}to{filter:hue-rotate(360deg) drop-shadow(0 0 8px #fff)}}
+:is(.it,.dex div.got){position:relative;isolation:isolate;overflow:hidden}
+:is(.it,.dex div.got):is(.t6,.t7,.t8,.t9,.t10,.t11):before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit}
+:is(.it,.dex div.got):is(.t8,.t9,.t10,.t11){color:#fff}.dex div.got:is(.t8,.t9,.t10,.t11) small{color:rgba(255,255,255,.75)}
+:is(.it,.dex div.got).t6{animation:glitch 2.6s steps(1) infinite}
+:is(.it,.dex div.got).t7{animation:gp 2.4s ease-in-out infinite}
+:is(.it,.dex div.got).t7:before{background:repeating-linear-gradient(60deg,transparent 0 10px,rgba(255,255,255,.1) 10px 12px);background-size:60px 60px;animation:slide 3s linear infinite}
+:is(.it,.dex div.got).t8{background:radial-gradient(circle at 30% 20%,rgba(120,255,160,.35),transparent 50%),radial-gradient(circle at 80% 80%,rgba(80,120,255,.4),transparent 55%),linear-gradient(145deg,#0a1f14,#061024);background-size:200% 200%;animation:neb 8s ease-in-out infinite alternate}
+:is(.it,.dex div.got).t8:before{background:radial-gradient(1.5px 1.5px at 12% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 70% 25%,#fff,transparent),radial-gradient(2px 2px at 40% 60%,#cfe,transparent),radial-gradient(1.5px 1.5px at 85% 75%,#fff,transparent),radial-gradient(2px 2px at 25% 85%,#fff,transparent);animation:twinkle 2.2s ease-in-out infinite}
+:is(.it,.dex div.got).t9{background:radial-gradient(circle at 50% 50%,#000 0 13%,transparent 14%),#0b0800}
+:is(.it,.dex div.got).t9:before{inset:-60%;opacity:.6;background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(255,225,77,.8),transparent 30%,rgba(255,140,0,.7),transparent 60%,rgba(255,225,77,.8),transparent);-webkit-mask:radial-gradient(circle at 50% 50%,transparent 8%,#000 10%,#000 30%,transparent 55%);mask:radial-gradient(circle at 50% 50%,transparent 8%,#000 10%,#000 30%,transparent 55%);animation:rz 5s linear infinite}
+:is(.it,.dex div.got).t10{background:linear-gradient(0deg,#6a1200,#1a0500 70%);animation:omg 1.6s ease-in-out infinite}
+:is(.it,.dex div.got).t10:before{mix-blend-mode:screen;background:radial-gradient(40px 60px at 20% 110%,rgba(255,160,40,.8),transparent),radial-gradient(45px 70px at 55% 115%,rgba(255,90,20,.9),transparent),radial-gradient(40px 60px at 90% 110%,rgba(255,200,60,.8),transparent);animation:flame .9s ease-in-out infinite alternate}
+:is(.it,.dex div.got).t11{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}
+:is(.it,.dex div.got).t11:before{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent);background-size:300% 100%,auto,auto;animation:sheen 3s linear infinite}
+.it.t11 span{animation:hue 4s linear infinite}
+.cd .bst{display:block;font-size:.72rem;font-weight:800;margin:3px 0;color:#ffe9a8}.cd .eqb{margin-right:4px}.cd.eqd{outline:3px solid #ffd23f;box-shadow:0 0 22px #ffd23f}
+.ach{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.ach div{font-size:.78rem;border:1px solid var(--bd);border-radius:8px;padding:6px 8px;opacity:.5}.ach div.on{opacity:1;border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--card))}.ach small{display:block;color:var(--mut);font-size:.7rem}
+#start{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;overflow:auto;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,#7a5cff 38%,var(--bg)),var(--bg) 70%);transition:opacity .5s,transform .5s}
+#start.out{opacity:0;transform:scale(1.08);pointer-events:none}
+#start h1{font-size:2.8rem;margin:0}
+#start .big{font-size:5.5rem;line-height:1;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 24px #ff3df0)}
+#start .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+#start .chip{background:color-mix(in srgb,var(--card) 75%,transparent);border:1px solid var(--bd);border-radius:12px;padding:8px 14px;font-weight:800;font-size:1.1rem}
+#start .chip small{display:block;font-weight:500;color:var(--mut);font-size:.62rem;text-transform:uppercase;letter-spacing:.06em}
+#start .hook{font-weight:800;color:var(--gold);max-width:340px}
+#start .tiers{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;max-width:360px}
+#start .tiers i{width:18px;height:18px;border-radius:50%;background:var(--k);box-shadow:0 0 10px var(--k)}
+#start .tiers i.no{background:var(--bd);box-shadow:none}
+#play{width:auto;margin:6px 0;padding:18px 56px;font-size:1.3rem;background:linear-gradient(135deg,#ff3df0,#7a5cff);color:#fff;animation:pulsebtn 1.6s ease-in-out infinite}
+@keyframes pulsebtn{50%{transform:scale(1.06);box-shadow:0 0 38px #ff3df0}}
+#start .by{color:var(--mut);font-size:.85rem;letter-spacing:.08em}
 </style>
 </head>
 <body>
 <main>
-<h1>🧬 Chromosome Case</h1>
+<h1>🧬 Chromosome Case</h1><div class="hint" style="margin-top:-2px">Made by Jace Glover</div>
 <p class="sub">Press SPACE or tap the card to open a case. Land the golden Omega. Mutations, wear and world events shake up every drop.</p>
 <div class="evb" id="evb"></div><div class="stats">
 <div class="stat"><b id="best">0</b><span>High score</span></div>
@@ -124,34 +168,37 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 </div>
 <button id="go"><span id="gl">Open case (Space)</span><i id="bar"></i></button>
 <div id="msg"></div>
-<button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button><button id="onl" class="reset">Online mode: off</button>
+<button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button>
 <canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
-<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and each tier or mutation you discover adds permanent luck.</div>
+<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 20, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck.</div>
 <div class="up" id="up"></div>
 <div class="hint" style="margin-top:14px">Odds below are base odds. Luck multiplies your chances, and it never caps out.</div>
-<section class="lb" id="onlsec" style="display:none"><h2>🌐 Online Lobby <span id="ocount"></span></h2><div id="peers"></div><h2 style="margin-top:12px;font-size:.9rem">📡 Live Drops</h2><ol id="feed"></ol><div class="st">Epic or better pulls by anyone online show up here. A Mythic or better pull blesses every online player with Luck ×2 for 20 seconds.</div></section>
-<section class="lb"><h2>🃏 Card Collection <span id="ccount"></span></h2><div class="cards" id="cards"></div><div class="st">Every Epic or better drop (or Radioactive+ mutation) mints a numbered, certified card. Your top 24 are shown. Download one as an image; it carries a certificate code that proves who minted it.</div></section><section class="lb"><h2>🔍 Verify a Card</h2><div><input id="vcode" placeholder="Certificate code"> <button class="reset" id="vgo">Verify</button></div><div class="st" id="vres">Paste the certificate code from a card to see who really minted it.</div></section>
+<section class="lb"><h2>🏅 Achievements <span id="acount"></span></h2><div class="st" id="strk"></div><div class="ach" id="ach"></div></section>
+
+<section class="lb"><h2>🃏 Card Collection <span id="ccount"></span></h2><div class="st" id="eqinfo"></div><div class="cards" id="cards"></div><div class="st">Every Epic or better drop (or Radioactive+ mutation) mints a numbered, certified card with luck and DNA boosts: the rarer, the stronger. Equip cards to use their boosts (more slots with each Evolve). Your top 24 are shown. Download one as an image; it carries a certificate code that proves who minted it.</div></section><section class="lb"><h2>🔍 Verify a Card</h2><div><input id="vcode" placeholder="Certificate code"> <button class="reset" id="vgo">Verify</button></div><div class="st" id="vres">Paste the certificate code from a card to see who really minted it.</div></section>
 <section class="lb"><h2>🏆 Online High Scores</h2><div><input id="nick" maxlength="14" placeholder="Your name"> <button class="reset" id="nsave">Save name</button></div><ol id="lbl"></ol><div class="st" id="lst">Connecting…</div></section><div class="dex" id="dex"></div><div class="dex" id="mdex"></div>
 <button class="reset" id="reset">Reset progress</button>
-<div class="hint" style="margin-top:18px">🧬 Chromosome Case · your progress, cards and scores follow your account.</div>
+<div class="hint" style="margin-top:18px">🧬 Chromosome Case · Made by Jace Glover · your progress, cards and scores follow your account.</div>
 </main>
+<div id="start"></div>
 <script>
 var TIERS=[
 {n:"Common",o:2,lo:1,hi:100,c:"#7a8099"},
-{n:"Uncommon",o:10,lo:100,hi:1e3,c:"#2fb36b"},
-{n:"Rare",o:100,lo:1e3,hi:1e4,c:"#2f7bf0"},
-{n:"Epic",o:1e4,lo:1e4,hi:1e6,c:"#9b4de8"},
-{n:"Legendary",o:1e6,lo:1e6,hi:1e8,c:"#f0a020"},
-{n:"Mythic",o:1e9,lo:1e8,hi:1e10,c:"#e8374f"},
-{n:"Mutant",o:1e12,lo:1e10,hi:1e12,c:"#14c8d8"},
-{n:"Genome Prime",o:1e14,lo:1e12,hi:1e14,c:"#ff3df0"},
-{n:"Cosmic",o:1e17,lo:1e14,hi:1e17,c:"#76395D"},
-{n:"Singularity",o:1e20,lo:1e17,hi:1e20,c:"#ffe14d"},
-{n:"Omega",o:1e24,lo:1e20,hi:1e24,c:"#ff7a2e"}
+{n:"Uncommon",o:8,lo:100,hi:1e3,c:"#2fb36b"},
+{n:"Rare",o:40,lo:1e3,hi:1e4,c:"#2f7bf0"},
+{n:"Epic",o:250,lo:1e4,hi:1e6,c:"#9b4de8"},
+{n:"Legendary",o:2500,lo:1e6,hi:1e8,c:"#f0a020"},
+{n:"Mythic",o:30000,lo:1e8,hi:1e10,c:"#e8374f"},
+{n:"Mutant",o:3.5e5,lo:1e10,hi:1e12,c:"#14c8d8"},
+{n:"Genome Prime",o:4e6,lo:1e12,hi:1e14,c:"#ff3df0"},
+{n:"Cosmic",o:8e7,lo:1e14,hi:1e17,c:"#6bff7a"},
+{n:"Singularity",o:1.6e9,lo:1e17,hi:1e20,c:"#ffe14d"},
+{n:"Omega",o:2e11,lo:1e20,hi:1e24,c:"#ff7a2e"},
+{n:"Glover",o:1e18,lo:1e24,hi:1e30,c:"#e8f4ff"}
 ];
 var S={best:0,rolls:0,rare:-1,found:[]};
 try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number")S=p}}catch(e){}
-S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];
+S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
 function save(){try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
 function $(i){return document.getElementById(i)}
 function fmt(n){return Math.round(n).toLocaleString("en-US")}
@@ -172,15 +219,15 @@ $("chr").innerHTML=b;
 }
 /* upgrades: luck has no cap */
 function evoMul(){return Math.pow(2,S.evo)}
-function lvMul(n){return Math.pow(1.5,Math.min(n,15))*Math.pow(1.22,Math.max(0,n-15))}
-function mileMul(){return 1+.15*S.found.length+.1*Object.keys(S.mut).length}
-function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(ev&&ev.l||1)}
-function yMul(){return Math.pow(1.35,S.yld)*(ev&&ev.y||1)}
+function lvMul(n){return Math.pow(1.5,Math.min(n,20))*Math.pow(1.2,Math.max(0,n-20))}
+function mileMul(){return (1+.12*S.found.length+.08*Object.keys(S.mut).length)*(1+.05*(S.ach||[]).length)}
+function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/30)*eqLuck()*(hot>0?1.5:1)*(ev&&ev.l||1)}
+function yMul(){return Math.pow(1.35,S.yld)*eqDna()*(ev&&ev.y||1)}
 function cdSec(){return Math.max(0.2,1.5*Math.pow(0.88,S.cd)*(ev&&ev.cd||1))}
 var CMAX=16;
-var ES=function(){return Math.pow(1.6,S.evo)},COST={l:function(){return 60*Math.pow(2.2,S.luck)*ES()},c:function(){return 80*Math.pow(2.8,S.cd)*ES()},y:function(){return 120*Math.pow(2.4,S.yld)*ES()}};
+var ES=function(){return Math.pow(1.8,S.evo)},COST={l:function(){return 60*Math.pow(1.95,S.luck)*ES()},c:function(){return 80*Math.pow(2.5,S.cd)*ES()},y:function(){return 120*Math.pow(2.2,S.yld)*ES()}};
 var KEY={l:"luck",c:"cd",y:"yld"};
-function evoNeed(){return 14+6*S.evo}function evoTier(){return Math.min(10,3+S.evo)}function canEvo(){return S.luck>=evoNeed()&&S.rare>=evoTier()}
+function evoNeed(){return 16+6*S.evo}function evoTier(){return Math.min(10,3+S.evo)}function canEvo(){return S.luck>=evoNeed()&&S.rare>=evoTier()}
 function pick(){
 var r=Math.random()/luckMul(),k=0;
 for(var i=TIERS.length-1;i>=0;i--){if(r<1/TIERS[i].o){k=i;break}}
@@ -188,10 +235,10 @@ var t=TIERS[k],s=Math.exp(Math.log(t.lo)+Math.random()*(Math.log(t.hi)-Math.log(
 var md=-1,lm=Math.pow(luckMul(),.3),fl=Math.random(),wi=fl<.07?0:fl<.15?1:fl<.38?2:fl<.45?3:4;for(i=MODS.length-1;i>=0;i--)if(Math.random()<lm/MODS[i].o){md=i;break}
 return {k:k,s:Math.round(s*(md>=0?MODS[md].m:1)*WM[wi]),md:md,fl:fl,wi:wi};
 }
-function dex(){mdex();cards();
+function dex(){mdex();cards();ach();
 $("dex").innerHTML=TIERS.map(function(t,i){
 var g=S.found.indexOf(i)>-1;
-return '<div class="'+(g?"got":"")+'" style="--k:'+t.c+'">'+(g?t.n+" · ×"+fmt(S.cnt[i]||0):"???")+'<small>'+oddsText(t.o)+'</small></div>'}).join("");
+return '<div class="'+(g?"got t"+i:"")+'" style="--k:'+t.c+'">'+(g?t.n+" · ×"+fmt(S.cnt[i]||0):"???")+'<small>'+oddsText(t.o)+'</small></div>'}).join("");
 }
 function hist(){$("hist").innerHTML=S.hist.map(function(k){return '<i style="--k:'+TIERS[k].c+'" title="'+TIERS[k].n+'"></i>'}).join("")}
 function stats(){
@@ -212,7 +259,7 @@ spinReel(r,dur,function(){$("chr").style.opacity=1;finish(r,TIERS[r.k])});
 }
 function finish(r,t){
 $("chr").classList.remove("spin");
-S.rolls++;S.cnt[r.k]=(S.cnt[r.k]||0)+1;if(r.md>=0)S.mut[r.md]=(S.mut[r.md]||0)+1;
+S.pm=r.k>=5?0:(S.pm||0)+1;S.rolls++;S.cnt[r.k]=(S.cnt[r.k]||0)+1;if(r.md>=0)S.mut[r.md]=(S.mut[r.md]||0)+1;
 S.hist.unshift(r.k);S.hist.length=Math.min(S.hist.length,14);
 var nb=r.s>S.best;if(nb)S.best=r.s;
 if(r.k>S.rare)S.rare=r.k;
@@ -221,12 +268,12 @@ if(r.k>=3||r.md>=2){S.cards.push({k:r.k,md:r.md,wi:r.wi,fl:r.fl,s:r.s,n:S.rolls,
 document.documentElement.style.setProperty("--c",t.c);
 draw(t);
 var el=$("chr");el.style.filter=r.md>=0?MODS[r.md].f:"";el.classList.remove("pop");void el.getBoundingClientRect();el.classList.add("pop");
-var gain=r.s*yMul()*evoMul();
+hot=r.k>=3?5:Math.max(0,hot-1);var gain=r.s*yMul()*evoMul();
 $("tier").textContent=(r.md>=0?MODS[r.md].n+" ":"")+t.n;$("odds").textContent=oddsText(t.o)+(r.md>=0?" + "+oddsText(MODS[r.md].o)+" mutation":"")+" · "+WN[r.wi]+" ("+r.fl.toFixed(4)+") · "+quip(r.k);reveal(r.k);if(r.md>=0){say(MODS[r.md].n.toUpperCase()+" MUTATION! ×"+fmt(MODS[r.md].m),MODS[r.md].c);if(r.md>=2)boom(100,MODS[r.md].c)}
-$("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"");
+$("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"")+" · pity ×"+xf(1+(S.pm||0)/30)+(hot>0?" · 🔥 hot streak ×1.5 ("+hot+")":"");
 $("new").classList.toggle("on",nb);
 var st=$("stage");st.classList.remove("flash");if(r.k>=3){void st.getBoundingClientRect();st.classList.add("flash")}
-S.dna+=gain;stats();dex();hist();ups();save();if(nb)push();if(onl&&room){pubPresence();if(r.k>=3||r.md>=2)room.emit("drop",{k:r.k,md:r.md,s:r.s,nick:(nick||"").slice(0,14)}).catch(function(){})}
+S.dna+=gain;stats();dex();hist();ups();save();if(nb)push();
 busy=false;
 cdEnd=performance.now()+cdSec()*1000+pen;pen=0;cdLoop();
 if(auto)setTimeout(autoRoll,cdSec()*1000+100);
@@ -240,7 +287,7 @@ return '<div class="u"><b>'+title+'</b><small>'+desc+'</small><div class="r"><bu
 h+=card("l","Luck Lv "+S.luck,"Now ×"+xf(luckMul())+" → ×"+xf(luckMul()*lvMul(S.luck+1)/lvMul(S.luck))+" · diminishing");
 h+=card("c","Cooldown Lv "+S.cd,"Now "+cdSec().toFixed(2)+"s"+(S.cd>=CMAX?"":" → "+Math.max(0.2,1.5*Math.pow(0.88,S.cd+1)).toFixed(2)+"s"),S.cd,S.cd>=CMAX);
 h+=card("y","DNA Yield Lv "+S.yld,"Now ×"+xf(yMul())+" → ×"+xf(yMul()*1.35));
-h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Needs Luck Lv '+evoNeed()+' and a '+TIERS[evoTier()].n+' found. Costs rise 60% per stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve")+'</button></div></div>';
+h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Needs Luck Lv '+evoNeed()+' and a '+TIERS[evoTier()].n+' found. Costs rise 80% per stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve")+'</button></div></div>';
 $("up").innerHTML=h;
 }
 function buy(k,max){
@@ -265,8 +312,8 @@ if(left>0){b.classList.add("cd");$("gl").textContent="Cooldown "+(left/1000).toF
 else{b.classList.remove("cd");$("gl").textContent="Open case (Space)";$("bar").style.width="0"}
 }
 var SCOLD=["Easy there! One roll at a time.","Spamming won’t help, you know.","I SAW THAT. Stop mashing!","Your keyboard is begging you to stop.","Chromosomes need personal space!"];
-var QUIPS=[["Basic. Boring. Beautiful.","Meh.","A chromosome. Truly."],["Ooh, a little shiny.","Not bad!","Mildly interesting."],["Now we’re talking.","Ooh, rare!","Nice pull."],["That’s a good one!","Epic vibes.","Scientists are impressed."],["Go buy a lottery ticket.","Whoa!!","Professor, come look at this."],["Is this even legal?","The lab is shaking!","Nobody will believe you."],["Your DNA is glitching!","Mutant energy.","Alert the geneticists."],["IMPOSSIBLE. You are the chosen one.","Screenshot it NOW.","The universe blinked."],["Stars are taking notes.","Cosmic jackpot.","Astronomers are calling."],["Reality just buffered.","Time bent a little.","A tiny black hole winked at you."],["THE FINAL FORM.","Omega. There is nothing beyond.","You broke the game. Congratulations."]];
-var HYPE=["","","","","LEGENDARY!","MYTHIC PULL!!","MUTANT ALERT!!!","🎉 GENOME PRIME!!! 🎉","🌌 COSMIC!!! 🌌","⚫ SINGULARITY!!! ⚫","👑 OMEGA!!! 👑"];
+var QUIPS=[["Basic. Boring. Beautiful.","Meh.","A chromosome. Truly."],["Ooh, a little shiny.","Not bad!","Mildly interesting."],["Now we’re talking.","Ooh, rare!","Nice pull."],["That’s a good one!","Epic vibes.","Scientists are impressed."],["Go buy a lottery ticket.","Whoa!!","Professor, come look at this."],["Is this even legal?","The lab is shaking!","Nobody will believe you."],["Your DNA is glitching!","Mutant energy.","Alert the geneticists."],["IMPOSSIBLE. You are the chosen one.","Screenshot it NOW.","The universe blinked."],["Stars are taking notes.","Cosmic jackpot.","Astronomers are calling."],["Reality just buffered.","Time bent a little.","A tiny black hole winked at you."],["THE FINAL FORM.","Omega. There is nothing beyond.","You broke the game. Congratulations."],["GLOVER. One in a quintillion.","Frame this. Print it. Tell everyone.","Statistically, this shouldn’t exist."]];
+var HYPE=["","","","","LEGENDARY!","MYTHIC PULL!!","MUTANT ALERT!!!","🎉 GENOME PRIME!!! 🎉","🌌 COSMIC!!! 🌌","⚫ SINGULARITY!!! ⚫","👑 OMEGA!!! 👑","🌈 GLOVER!!! 1 IN A QUINTILLION 🌈"];
 function quip(k){var a=QUIPS[k];return a[Math.floor(Math.random()*a.length)]}
 function say(t,c){var m=$("msg");m.textContent=t;m.style.color=c||"#e8374f";m.classList.add("on");clearTimeout(msgT);msgT=setTimeout(function(){m.classList.remove("on")},2600)}
 function snd(f,d,ty,v,dl){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(dl||0);o.type=ty||"sine";o.frequency.value=f;g.gain.setValueAtTime(v||.08,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d)}catch(e){}}
@@ -285,12 +332,12 @@ if(n-lastS<500)return;
 lastS=n;say(SCOLD[Math.min(SCOLD.length-1,Math.floor((c-3)/2))]);snd(110,.2,"sawtooth",.07);shake($("go"));
 }
 function reveal(k){
-var b=[392,440,523,587,659,784,880,1047,1175,1319,1568],c=TIERS[k].c;
+var b=[392,440,523,587,659,784,880,1047,1175,1319,1568,1760],c=TIERS[k].c;
 snd(b[k],.25,"triangle",.1);
 if(k>=2)snd(b[k]*1.25,.25,"triangle",.09,.12);
 if(k>=4)snd(b[k]*1.5,.4,"triangle",.09,.24);
-if(k>=6)snd(b[k]*2,.6,"sine",.1,.4);
-if(k>=3)boom(k>=9?420:k>=7?320:k>=5?160:70,c);
+if(k>=6)snd(b[k]*2,.6,"sine",.1,.4);if(k>=11)[1,1.25,1.5,2,2.5,3].forEach(function(m,i){snd(b[k]*m,.5,"triangle",.1,.5+i*.15)});
+if(k>=3)boom(k>=11?700:k>=9?420:k>=7?320:k>=5?160:70,c);if(k>=11)glover();
 if(k>=5)shake(document.querySelector("main"));
 if(HYPE[k])say(HYPE[k],c);
 }
@@ -308,7 +355,7 @@ if(P.length)raf=requestAnimationFrame(fxLoop);else{raf=0;g.clearRect(0,0,cv.widt
 }
 $("auto").addEventListener("click",toggleAuto);
 $("mute").addEventListener("click",function(){muted=!muted;this.textContent="Sound: "+(muted?"off":"on");this.blur()});
-document.addEventListener("keydown",function(e){if(e.target&&e.target.tagName==="INPUT")return;
+document.addEventListener("keydown",function(e){if(e.target&&e.target.tagName==="INPUT")return;if(!started){if(e.code==="Space"||e.code==="Enter"){e.preventDefault();play()}return}
 if(e.code==="Space"||e.key===" "){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();press(e.repeat)}
 else if(e.code==="KeyA"&&!e.repeat)toggleAuto()
 });
@@ -317,7 +364,7 @@ $("stage").addEventListener("click",function(){press(false)});
 $("reset").addEventListener("click",function(){
 if(!this.dataset.arm){this.dataset.arm=1;this.textContent="Click again to erase everything";var b=this;setTimeout(function(){delete b.dataset.arm;b.textContent="Reset progress"},3000);return}
 delete this.dataset.arm;this.textContent="Reset progress";
-if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,evo:0,cnt:{},mut:{},cards:[],hist:[]};save();stats();dex();hist();ups();
+if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
 $("tier").textContent="Ready";$("odds").textContent="Press space to begin";$("score").textContent="0";$("gain").textContent="";$("new").classList.remove("on");
 document.documentElement.style.setProperty("--c","#7a8099");draw(TIERS[0]);idle();
 });
@@ -337,7 +384,11 @@ var cv=document.createElement("canvas"),W=600,H=840,t=TIERS[c.k],g;cv.width=W;cv
 g.fillStyle="#0a0c18";g.fillRect(0,0,W,H);
 var rg=g.createRadialGradient(W/2,300,20,W/2,300,520);rg.addColorStop(0,t.c);rg.addColorStop(1,"rgba(0,0,0,0)");g.globalAlpha=.55;g.fillStyle=rg;g.fillRect(0,0,W,H);
 g.globalAlpha=.07;g.fillStyle="#fff";for(var i=-8;i<16;i++){g.beginPath();g.moveTo(i*60,0);g.lineTo(i*60+30,0);g.lineTo(i*60+30+H*.5,H);g.lineTo(i*60+H*.5,H);g.fill()}g.globalAlpha=1;
-g.strokeStyle=t.c;g.lineWidth=10;g.strokeRect(14,14,W-28,H-28);g.lineWidth=2;g.strokeStyle="rgba(255,255,255,.5)";g.strokeRect(26,26,W-52,H-52);
+if(c.k===8){g.fillStyle="#fff";for(var q=0;q<70;q++){g.globalAlpha=.3+Math.random()*.7;g.fillRect(Math.random()*W,Math.random()*H,2,2)}g.globalAlpha=1}
+if(c.k===9){var bh=g.createRadialGradient(W/2,300,20,W/2,300,200);bh.addColorStop(0,"#000");bh.addColorStop(.45,"#000");bh.addColorStop(.55,"#ffb300");bh.addColorStop(1,"rgba(0,0,0,0)");g.fillStyle=bh;g.fillRect(0,100,W,400)}
+if(c.k===10){var fl=g.createLinearGradient(0,H,0,H*.45);fl.addColorStop(0,"rgba(255,120,20,.85)");fl.addColorStop(1,"rgba(255,60,0,0)");g.fillStyle=fl;g.fillRect(0,H*.45,W,H*.55)}
+var sg=t.c;if(c.k>=11){sg=g.createLinearGradient(0,0,W,H);["#f0f","#0ff","#ff0","#f0f"].forEach(function(col,i2){sg.addColorStop(i2/3,col)})}
+g.strokeStyle=sg;g.lineWidth=10;g.strokeRect(14,14,W-28,H-28);g.lineWidth=2;g.strokeStyle="rgba(255,255,255,.5)";g.strokeRect(26,26,W-52,H-52);
 g.textAlign="center";g.fillStyle="#fff";var F="Outfit,system-ui,sans-serif";
 g.font="700 26px "+F;g.fillText("CHROMOSOME CASE",W/2,80);
 g.font="190px serif";g.shadowColor=t.c;g.shadowBlur=45;g.fillText("🧬",W/2,330);g.shadowBlur=0;
@@ -345,10 +396,12 @@ g.font="800 50px "+F;g.fillText(((c.md>=0?MODS[c.md].n+" ":"")+t.n).toUpperCase(
 g.font="800 72px "+F;g.fillText(sc(c.s),W/2,505,520);
 g.font="600 26px "+F;g.fillText(WN[c.wi]+" · float "+c.fl.toFixed(4),W/2,560,520);
 g.fillText("Card #"+String(c.n).padStart(5,"0")+" · "+c.d,W/2,600,520);
-g.font="800 34px "+F;g.fillText("Owner: "+(nick||"Player"),W/2,670,520);
+g.font="800 28px "+F;g.fillText("🍀 ×"+xf(cLuck(c))+"   💠 ×"+xf(cDna(c)),W/2,642,520);
+g.font="800 34px "+F;g.fillText("Owner: "+(nick||"Player"),W/2,692,520);
 g.font="600 24px monospace";g.fillText(c.id?"CERT "+fid(c.id):"NOT CERTIFIED (offline)",W/2,735,520);
-g.font="500 17px "+F;g.fillText("Verify this code in the Chromosome Case page",W/2,775,520);
-cv.toBlob(async function(b){var d=await claude.use("downloads");if(!d){say("Downloads aren’t available here.");return}try{await d.save({filename:"chromosome-card-"+(c.id||c.n)+".png",data:b});say("Card saved ✓","#f5c542")}catch(e){say("Save cancelled.")}},"image/png")}
+g.font="500 17px "+F;g.fillText("Verify this code in the Chromosome Case page",W/2,775,520);g.font="600 15px "+F;g.fillText("Made by Jace Glover",W/2,805,520);
+cv.toBlob(async function(b){var d=null;try{d=await claude.use("downloads")}catch(e){}if(d){try{await d.save({filename:"chromosome-card-"+(c.id||c.n)+".png",data:b});say("Card saved ✓","#f5c542");return}catch(e){if(e&&e.code==="declined"){say("Save cancelled.");return}}}showCard(cv.toDataURL("image/png"))},"image/png")}
+function showCard(url){var o=document.createElement("div"),im=new Image(),t=document.createElement("div"),b=document.createElement("button");o.style.cssText="position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px";im.src=url;im.style.cssText="max-height:75vh;max-width:92vw;border-radius:12px";t.style.cssText="color:#fff;font-size:.85rem;text-align:center";t.textContent="Right-click (or long-press) the card and choose Save image.";b.textContent="Close";b.style.cssText="width:auto;padding:10px 28px;margin:0";b.onclick=function(){o.remove()};o.onclick=function(e){if(e.target===o)o.remove()};o.appendChild(im);o.appendChild(t);o.appendChild(b);document.body.appendChild(o)}
 $("cards").addEventListener("click",function(e){var b=e.target.closest("button.dl");if(!b)return;var c=shown[+b.dataset.i];if(c)dlCard(c)});
 $("vgo").addEventListener("click",async function(){
 var code=$("vcode").value.toUpperCase().replace(/[^A-Z0-9]/g,""),out=$("vres");
@@ -362,32 +415,10 @@ if(!x){out.textContent="❌ No genuine card with that code. It may be fake or co
 var ps=usr?await usr.profiles([good.id]):{},nm=(ps[good.id]&&ps[good.id].name)||"a verified player",t=TIERS[x.k];
 out.textContent="✅ Authentic · "+(x.md>=0?MODS[x.md].n+" ":"")+t.n+" · score "+sc(+x.s)+" · "+WN[x.wi]+" ("+(+x.fl).toFixed(4)+") · minted by "+nm+(good.data().nick?" (plays as "+good.data().nick+")":"")+" on "+x.d
 }catch(e){out.textContent="Couldn’t verify right now."}});
-var room=null,onl=false,feedL=[];
-function nm(by,fb){return usr&&by?usr.profiles([by]).then(function(p){return (p[by]&&p[by].name)||fb}).catch(function(){return fb}):Promise.resolve(fb)}
-function pubPresence(){if(room&&onl)room.presence({on:1,nick:(nick||"").slice(0,14),best:S.best,rare:S.rare}).catch(function(){})}
-function renderPeers(ps){
-var arr=ps.filter(function(p){return p.kind==="viewer"&&p.presence&&p.presence.on===1}),box=$("peers");
-$("ocount").textContent="· "+arr.length+" online";box.innerHTML="";
-arr.forEach(function(p){var d=document.createElement("span"),t=TIERS[+p.presence.rare],me=p.isMe&&p.sameTab,tail=" · "+short(+p.presence.best||0);d.className="pc";d.style.setProperty("--k",t?t.c:"#7a8099");d.textContent=(me?"You":String(p.presence.nick||"Player").slice(0,14))+tail;box.appendChild(d);if(!me)nm(p.by,"").then(function(n){if(n)d.textContent=n+tail})})}
-function renderFeed(){var ol=$("feed");ol.innerHTML="";feedL.forEach(function(f){var li=document.createElement("li");li.style.color=f.c;li.textContent=f.t;ol.appendChild(li)})}
-function onDrop(m){
-if(!onl||m.kind!=="viewer")return;var d=m.data||{},k=+d.k,md=+d.md;
-if(!(k>=0&&k<TIERS.length)||!(md>=-1&&md<MODS.length))return;
-var t=TIERS[k],label=(md>=0?MODS[md].n+" ":"")+t.n,me=m.isMe&&m.sameTab;
-nm(m.by,String(d.nick||"A player").slice(0,14)).then(function(n){
-var who=me?"You":n;feedL.unshift({t:who+" pulled "+label+" · "+sc(Math.min(Math.abs(+d.s)||0,1e30)),c:t.c});feedL.length=Math.min(feedL.length,12);renderFeed();
-if(k>=5&&!me){say("📡 "+who+" pulled "+label+"!",t.c);if(!ev){ev={n:"Blessing of "+who+" 🙏",l:2};evEnd=Date.now()+20000;stats();ups();evUI();snd(784,.3,"triangle",.1)}}})}
-async function goOnline(){
-try{room=room||await claude.use("room")}catch(e){}
-if(!room){say("Online mode isn’t available here. Open the page signed in to claude.ai.");onl=false;onlSync();return}
-if(!goOnline.h){goOnline.h=1;room.on("drop",onDrop);room.onPeers(function(c){renderPeers(c.peers)})}
-pubPresence()}
-function onlSync(){var b=$("onl");b.textContent="Online mode: "+(onl?"on":"off");b.className="reset"+(onl?" on":"");$("onlsec").style.display=onl?"block":"none";S.onl=onl;save()}
-$("onl").addEventListener("click",function(){onl=!onl;onlSync();if(onl)goOnline();else if(room)room.presence({on:null}).catch(function(){});this.blur()});
-function gate(k){var L=S[KEY[k]];if(k==="l")return L<6?-1:Math.min(10,1+Math.floor((L-6)/5));if(k==="y")return L<5?-1:Math.min(10,1+Math.floor((L-5)/3));return -1}
+function gate(k){var L=S[KEY[k]];if(k==="l")return L<8?-1:Math.min(10,1+Math.floor((L-8)/5));if(k==="y")return L<6?-1:Math.min(10,1+Math.floor((L-6)/4));return -1}
 var cloudT=0,cloudReady=false;
 function cloudMsg(t){$("cld").textContent=t}
-function norm(){S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[]}
+function norm(){S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
 function cloudSave(){if(!lbDB||!uid||!cloudReady||cloudT)return;cloudT=setTimeout(function(){cloudT=0;cloudNow()},4000)}
 function cloudNow(){if(!lbDB||!uid)return;lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
 async function loadCloud(){
@@ -396,17 +427,60 @@ if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$(
 else if(S.rolls>cr)cloudNow();else cloudMsg("☁️ Progress synced to your account")}
 catch(e){cloudMsg("Cloud save unavailable. Progress is saved in this browser.")}
 cloudReady=true}
+function glover(){var h=0,n=0,iv=setInterval(function(){if(busy||++n>80){clearInterval(iv);if(!busy)document.documentElement.style.setProperty("--c",TIERS[11].c);return}h=(h+12)%360;document.documentElement.style.setProperty("--c","hsl("+h+" 100% 60%)")},100)}
+var BL=[1.05,1.05,1.1,1.25,1.5,2,3,5,8,15,30,100],BD=[1.05,1.05,1.1,1.2,1.5,2,3,4,6,10,20,50];
+function bq(c){return (1.2-.4*(+c.fl||0))*(1+.25*(c.md+1))}
+function cLuck(c){return 1+((BL[c.k]||1)-1)*bq(c)}
+function cDna(c){return 1+((BD[c.k]||1)-1)*bq(c)}
+function eqSlots(){return Math.min(8,3+S.evo)}
+function eqCards(){return S.eq.map(function(n){return S.cards.filter(function(c){return c.n===n})[0]}).filter(Boolean)}
+function eqLuck(){return eqCards().reduce(function(a,c){return a*cLuck(c)},1)}
+function eqDna(){return eqCards().reduce(function(a,c){return a*cDna(c)},1)}
+$("cards").addEventListener("click",function(e){var b=e.target.closest("button.eqb");if(!b)return;var c=shown[+b.dataset.i];if(!c)return;var ix=S.eq.indexOf(c.n);if(ix>-1)S.eq.splice(ix,1);else if(S.eq.length<eqSlots())S.eq.push(c.n);else{say("All "+eqSlots()+" card slots are full. Unequip one first.");return}snd(660,.1,"triangle",.08);save();stats();ups();cards()});
+var hot=0,ACH=[
+{n:"First Steps",d:"Open 10 cases",f:function(){return S.rolls>=10}},
+{n:"Case Addict",d:"Open 500 cases",f:function(){return S.rolls>=500}},
+{n:"Marathon",d:"Open 5,000 cases",f:function(){return S.rolls>=5000}},
+{n:"Epic Find",d:"Find an Epic",f:function(){return S.found.indexOf(3)>-1}},
+{n:"Legendary Luck",d:"Find a Legendary",f:function(){return S.found.indexOf(4)>-1}},
+{n:"Mythic Master",d:"Find a Mythic",f:function(){return S.found.indexOf(5)>-1}},
+{n:"Mutant Hunter",d:"Find a Mutant",f:function(){return S.found.indexOf(6)>-1}},
+{n:"Cosmic Explorer",d:"Find a Cosmic",f:function(){return S.found.indexOf(8)>-1}},
+{n:"Omega Reached",d:"Find an Omega",f:function(){return S.found.indexOf(10)>-1}},
+{n:"GLOVER",d:"Find the Glover",f:function(){return S.found.indexOf(11)>-1}},
+{n:"Mutation Hunter",d:"Find 3 mutations",f:function(){return Object.keys(S.mut).length>=3}},
+{n:"Collector",d:"Own 10 cards",f:function(){return S.cards.length>=10}},
+{n:"Upgrade Junkie",d:"Reach Luck level 15",f:function(){return S.luck>=15}},
+{n:"Evolved",d:"Evolve once",f:function(){return S.evo>=1}},
+{n:"Regular",d:"Play 3 days in a row",f:function(){return (S.streak||0)>=3}},
+{n:"Dedicated",d:"Play 7 days in a row",f:function(){return (S.streak||0)>=7}}];
+function ach(){S.ach=S.ach||[];var nw=[];ACH.forEach(function(a){if(S.ach.indexOf(a.n)<0&&a.f()){S.ach.push(a.n);nw.push(a.n)}});
+if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+" (+5% luck each)","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
+$("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days · each achievement adds +5% permanent luck";
+$("ach").innerHTML=ACH.map(function(a){var on=S.ach.indexOf(a.n)>-1;return '<div class="'+(on?"on":"")+'">'+(on?"✅ ":"🔒 ")+esc(a.n)+'<small>'+esc(a.d)+'</small></div>'}).join("")}
+function dkey(t){var d=new Date(t);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+function daily(){var k=dkey(Date.now());if(S.day===k)return;S.streak=S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1;S.day=k;var l=2+Math.min(S.streak,10)*.5;ev={n:"Daily Lucky Hour 🍀",l:l};evEnd=Date.now()+300000;say("🎁 Daily bonus! Luck ×"+l+" for 5 minutes · "+S.streak+" day streak","#ffd23f");snd(784,.3,"triangle",.1);stats();ups();evUI();dex();save()}
+var started=false;
+function startScreen(){
+var o=$("start"),ready=S.day!==dkey(Date.now()),streak=ready?(S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1):(S.streak||0),hook,nx=-1;
+for(var i=0;i<TIERS.length;i++)if(S.found.indexOf(i)<0){nx=i;break}
+if(ready)hook="🎁 Your Daily Lucky Hour is ready: Luck ×"+(2+Math.min(streak,10)*.5)+" for 5 minutes"+(streak>1?" · day "+streak+" streak!":"");
+else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/30)+" is building. A Mythic is overdue…";
+else hook=nx<0?"You’ve found every tier. Chase mutations and cards!":"Next tier to discover: ??? · "+oddsText(TIERS[nx].o);
+o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="by">Made by Jace Glover</div>'}
+function play(){if(started)return;started=true;var o=$("start");o.classList.add("out");setTimeout(function(){o.style.display="none"},550);snd(523,.15,"triangle",.1);snd(784,.25,"triangle",.1,.1);daily()}
+$("start").addEventListener("click",function(e){if(e.target.closest("#play"))play()});
 function esc(s){return String(s).replace(/[&<>"']/g,function(m){return "&#"+m.charCodeAt(0)+";"})}
 function cmpCard(x,y){return y.k-x.k||y.md-x.md||y.s-x.s}
-function cards(){var a=S.cards.slice().sort(cmpCard).slice(0,24);$("ccount").textContent="· "+S.cards.length;$("cards").innerHTML=a.length?a.map(function(c,i){var t=TIERS[c.k];return '<div class="cd" style="--k:'+t.c+'"><span class="sn">#'+String(c.n).padStart(5,"0")+'</span><i>🧬</i><b>'+(c.md>=0?MODS[c.md].n+" ":"")+t.n+'</b><em>'+sc(c.s)+'</em><small>'+WN[c.wi]+' · '+c.fl.toFixed(4)+'<br>'+esc(c.d)+'<br>🔒 '+(c.id?fid(c.id):"certifying…")+'</small><u>👤 '+esc(nick||"You")+'</u><p>'+owners(c)+'</p><button class="dl" data-i="'+i+'">⬇ Download</button></div>'}).join(""):'<div class="st">No cards yet. Pull an Epic or better!</div>'}
-function itm(t,n){return '<div class="it" style="--k:'+TIERS[t].c+'"><span>🧬</span>'+n+'</div>'}
+function cards(){var a=S.cards.slice().sort(cmpCard).slice(0,24);$("ccount").textContent="· "+S.cards.length;$("eqinfo").textContent="Equipped "+S.eq.length+"/"+eqSlots()+" · card luck ×"+xf(eqLuck())+" · card DNA ×"+xf(eqDna());$("cards").innerHTML=a.length?(shown=a).map(function(c,i){var t=TIERS[c.k];return '<div class="cd t'+c.k+(S.eq.indexOf(c.n)>-1?" eqd":"")+'" style="--k:'+t.c+'"><span class="sn">#'+String(c.n).padStart(5,"0")+'</span><i>🧬</i><b>'+(c.md>=0?MODS[c.md].n+" ":"")+t.n+'</b><em>'+sc(c.s)+'</em><strong class="bst">🍀 ×'+xf(cLuck(c))+' · 💠 ×'+xf(cDna(c))+'</strong><small>'+WN[c.wi]+' · '+c.fl.toFixed(4)+'<br>'+esc(c.d)+'<br>🔒 '+(c.id?fid(c.id):"certifying…")+'</small><u>👤 '+esc(nick||"You")+'</u><p>'+owners(c)+'</p><button class="eqb" data-i="'+i+'">'+(S.eq.indexOf(c.n)>-1?"✓ Equipped":"Equip")+'</button><button class="dl" data-i="'+i+'">⬇ Download</button></div>'}).join(""):'<div class="st">No cards yet. Pull an Epic or better!</div>'}
+function itm(t,n){return '<div class="it t'+t+'" style="--k:'+TIERS[t].c+'"><span>🧬</span>'+n+'</div>'}
 function idle(){$("strip").innerHTML=TIERS.map(function(t,i){return itm(i,t.n)}).join("");$("strip").style.transform="translateX("+(-(6+5*94+44-$("reel").clientWidth/2))+"px)"}
 function spinReel(r,dur,done){
 var st=$("strip"),vw=$("reel").clientWidth,W=44+Math.floor(Math.random()*8),h="",lim=5+Math.min(5,S.luck/6);
-for(var i=0;i<W+8;i++){var t=i===W?r.k:Math.min(TIERS.length-1,Math.floor(Math.pow(Math.random(),2.4)*lim)),n=TIERS[t].n;if(i===W&&r.md>=0)n=MODS[r.md].n+" "+n;h+=itm(t,n)}
+var nmI=(r.k<=8&&Math.random()<.4)?W+(Math.random()<.5?-1:1):-1,nmT=Math.min(10,r.k+2+Math.floor(Math.random()*3));for(var i=0;i<W+8;i++){var t=i===W?r.k:i===nmI?nmT:Math.min(TIERS.length-1,Math.floor(Math.pow(Math.random(),2.4)*lim)),n=TIERS[t].n;if(i===W&&r.md>=0)n=MODS[r.md].n+" "+n;h+=itm(t,n)}
 st.innerHTML=h;
 var end=6+W*94+44-vw/2+(Math.random()*2-1)*38,t0=performance.now(),last=-1;
-(function f(){var p=Math.min(1,(performance.now()-t0)/dur),x=end*(1-Math.pow(1-p,4));st.style.transform="translateX("+(-x)+"px)";var ix=Math.floor((x+vw/2-6)/94);if(ix!==last){last=ix;tickSound()}if(p<1)requestAnimationFrame(f);else{st.children[W].classList.add("win");done()}})();
+(function f(){var p=Math.min(1,(performance.now()-t0)/dur),x=end*(1-Math.pow(1-p,4));st.style.transform="translateX("+(-x)+"px)";var ix=Math.floor((x+vw/2-6)/94);if(ix!==last){last=ix;tickSound()}if(p<1)requestAnimationFrame(f);else{st.children[W].classList.add("win");if(nmI>-1)setTimeout(function(){say("😱 SO CLOSE! You nearly landed "+TIERS[nmT].n+"!","#ffd23f")},900);done()}})();
 }
 function mdex(){$("mdex").innerHTML=MODS.map(function(m,i){var g=S.mut[i];return '<div class="'+(g?"got":"")+'" style="--k:'+m.c+'">'+(g?m.n+" ×"+fmt(m.m)+" · ×"+fmt(g):"???")+'<small>Mutation · '+oddsText(m.o)+'</small></div>'}).join("")}
 function evUI(){var e=$("evb");if(!ev){e.className="evb";return}e.textContent=ev.n+" · "+[ev.l&&"Luck ×"+ev.l,ev.y&&"DNA ×"+ev.y,ev.cd&&"Cooldown ×"+ev.cd].filter(Boolean).join(", ")+" · "+Math.max(0,Math.ceil((evEnd-Date.now())/1000))+"s";e.className="evb on"}
@@ -417,7 +491,7 @@ $("nick").value=nick;
 function lbStatus(t){$("lst").textContent=t}
 function renderLB(docs){var ol=$("lbl");ol.innerHTML="";docs.forEach(function(d,i){var x=d.data()||{},li=document.createElement("li"),a=document.createElement("span"),b=document.createElement("span");if(d.id===uid)li.className="me";a.textContent=(i+1)+". "+(x.name||"Anon");b.textContent=short(+x.best||0)+" · "+(TIERS[x.k]?TIERS[x.k].n:"");li.appendChild(a);li.appendChild(b);ol.appendChild(li)})}
 function push(){if(!lbDB||!uid||S.best<=0)return;clearTimeout(pushT);pushT=setTimeout(function(){lbDB.doc("scores/"+uid).set({name:nick||"Anon",best:S.best,k:S.rare,rolls:S.rolls,t:Date.now()}).then(function(){lbStatus("Score submitted ✓")}).catch(function(){lbStatus("Only Contributors can post scores. Ask the owner for access.")})},1500)}
-$("nsave").addEventListener("click",function(){nick=$("nick").value.trim().slice(0,14)||"Anon";try{localStorage.setItem("chrnick",nick)}catch(e){}push();pushOwn();pubPresence();say("Name saved","#f5c542")});
+$("nsave").addEventListener("click",function(){nick=$("nick").value.trim().slice(0,14)||"Anon";try{localStorage.setItem("chrnick",nick)}catch(e){}push();pushOwn();say("Name saved","#f5c542")});
 (async function(){try{
 var db=await claude.use("db"),user=await claude.use("user");
 if(!db||!user){lbStatus("Sign in to claude.ai to use the online leaderboard.");return}
@@ -426,7 +500,7 @@ var t=setTimeout(function(){lbStatus("Can’t reach the leaderboard yet…")},10
 db.collection("scores").orderBy("best","desc").limit(10).onSnapshot(function(s){clearTimeout(t);renderLB(s.docs);lbStatus(s.empty?"No scores yet. Be the first!":"Live · top 10")},function(){clearTimeout(t);lbStatus("Leaderboard unavailable.")});
 push();pushOwn();ownSub(db)
 }catch(e){lbStatus("Leaderboard unavailable here.")}})();
-draw(TIERS[0]);stats();dex();hist();ups();evUI();idle();onl=!!S.onl;onlSync();if(onl)goOnline();
+draw(TIERS[0]);stats();dex();hist();ups();evUI();idle();startScreen();
 </script>
 </body>
 </html>
