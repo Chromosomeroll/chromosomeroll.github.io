@@ -173,14 +173,14 @@ html{scroll-behavior:smooth}::selection{background:var(--c);color:#fff}button:fo
 .lb{transition:transform .2s,box-shadow .2s}.lb:hover{transform:translateY(-2px)}
 .lb h2{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.lb h2:after{content:"▾";float:right;transition:transform .2s;color:var(--mut)}.lb.min h2:after{transform:rotate(90deg)}.lb.min>:not(h2){display:none}.lb.min{padding-bottom:10px}.lb.min h2{margin:0}#colall{display:block;margin:14px auto 0}
 :root[data-skin="neon"]{--bg:#07040f;--card:#120a24;--fg:#f4eaff;--mut:#a58bd4;--bd:#3a1f6e;--gold:#ff3df0}:root[data-skin="void"]{--bg:#000;--card:#0b0b10;--fg:#e6e6ee;--mut:#7c7c90;--bd:#1b1b26;--gold:#b04dff}:root[data-skin="sunset"]{--bg:#1a0b14;--card:#2a1220;--fg:#fff0e6;--mut:#d6a08c;--bd:#5a2a3a;--gold:#ffb347}.reset.on{color:var(--gold);font-weight:800;text-decoration:none}
-.warn{max-width:360px;font-size:.72rem;line-height:1.4;color:var(--mut);border:1px solid var(--gold);border-radius:10px;padding:8px 10px}.warn b{color:var(--gold)}#kgtag{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:2px;background:linear-gradient(90deg,#7fa02b,#ffb066,#ff7a1a,#7fa02b);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 4s linear infinite}.kgfly{position:fixed;top:18%;left:-80px;font-size:2.6rem;z-index:95;pointer-events:none;animation:kgfly 5s linear forwards;filter:drop-shadow(0 0 10px #ff7a1a)}@keyframes kgfly{0%{transform:translate(0,0) rotate(8deg)}25%{transform:translate(28vw,-30px) rotate(-6deg)}50%{transform:translate(58vw,20px) rotate(8deg)}75%{transform:translate(88vw,-26px) rotate(-6deg)}100%{transform:translate(calc(100vw + 120px),0) rotate(8deg)}}.kgt{font-family:ui-monospace,monospace;font-size:1.1rem;color:#cfd3f0;min-height:1.5em}.calm *,.calm *:before,.calm *:after{animation:none!important;transition:none!important}.calm #beam,.calm #fx{display:none!important}.reset:disabled{opacity:.5;cursor:not-allowed}
+.warn{max-width:360px;font-size:.72rem;line-height:1.4;color:var(--mut);border:1px solid var(--gold);border-radius:10px;padding:8px 10px}.warn b{color:var(--gold)}.cw{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;background:rgba(8,10,20,.92);padding:20px}.cw>div{max-width:360px;text-align:center;color:var(--fg);border:2px solid #e8374f;border-radius:16px;background:var(--card);padding:20px}.cw h2{margin:0 0 8px;color:#e8374f}.cw p{color:var(--mut);font-size:.9rem}.cw button{margin:6px 4px 0;width:auto}#kgtag{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:2px;background:linear-gradient(90deg,#7fa02b,#ffb066,#ff7a1a,#7fa02b);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 4s linear infinite}.kgfly{position:fixed;top:18%;left:-80px;font-size:2.6rem;z-index:95;pointer-events:none;animation:kgfly 5s linear forwards;filter:drop-shadow(0 0 10px #ff7a1a)}@keyframes kgfly{0%{transform:translate(0,0) rotate(8deg)}25%{transform:translate(28vw,-30px) rotate(-6deg)}50%{transform:translate(58vw,20px) rotate(8deg)}75%{transform:translate(88vw,-26px) rotate(-6deg)}100%{transform:translate(calc(100vw + 120px),0) rotate(8deg)}}.kgt{font-family:ui-monospace,monospace;font-size:1.1rem;color:#cfd3f0;min-height:1.5em}.calm *,.calm *:before,.calm *:after{animation:none!important;transition:none!important}.calm #beam,.calm #fx{display:none!important}.reset:disabled{opacity:.5;cursor:not-allowed}
 #fx{z-index:100}.kgo{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(255,122,26,.45),rgba(8,10,20,.94) 70%);animation:kgin .5s ease-out;cursor:pointer;padding:20px}.kgc{text-align:center;color:#fff;max-width:340px}.kgb{font-size:6rem;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 28px #ff7a1a)}.kgc h2{font-size:2.2rem;margin:6px 0;letter-spacing:.06em;background:linear-gradient(90deg,#7fa02b,#ffb066,#ff7a1a,#7fa02b);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 3s linear infinite}.kgs{font-weight:800;color:#ffd23f}.kgn{color:#cfd3f0;margin:8px 0 12px;font-size:.9rem}@keyframes kgin{from{opacity:0;transform:scale(1.15)}to{opacity:1;transform:none}}
 .ach div.on{box-shadow:0 0 14px -6px var(--gold)}.prog-track i{box-shadow:0 0 10px #7a5cff}
 </style>
 </head>
 <body>
 <main>
-<h1>🧬 Chromosome Case</h1><div class="hint" style="margin-top:-2px">Made by Jace Glover</div><div id="kgtag" style="display:none">Version 7.2</div>
+<h1>🧬 Chromosome Case</h1><div class="hint" style="margin-top:-2px">Made by Claude AI</div><div id="kgtag" style="display:none">🦜 Kea &amp; Greig Edition</div>
 <p class="sub">Press SPACE or tap the card to open a case. Chase the legendary Glover. Mutations, wear and world events shake up every drop.</p>
 <div class="evb" id="evb"></div><div class="stats">
 <div class="stat"><b id="best">0</b><span>High score</span></div>
@@ -203,7 +203,7 @@ html{scroll-behavior:smooth}::selection{background:var(--c);color:#fff}button:fo
 <button id="go"><span id="gl">Open case (Space)</span><i id="bar"></i></button>
 <div id="msg"></div>
 <button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button><button id="mus" class="reset">Music: off</button><button id="share" class="reset">📣 Share my best</button>
-<div id="beam"></div><canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to google (not working) to also sync it to your account.</div>
+<div id="beam"></div><canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
 <div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck. Every 40th case is a Bonus Case (×4 luck) and the Mutation Lab boosts mutation chances. 1 in 10 cases is a Throwback with no luck applied, so Commons never disappear. Gain XP every roll to level up (+2% luck per level) and find Relics at random.</div>
 <div class="up" id="up"></div>
 <section class="lb progression" id="progression"><h2>🧬 Long-term progression</h2><div id="progbody"></div></section>
@@ -216,10 +216,11 @@ html{scroll-behavior:smooth}::selection{background:var(--c);color:#fff}button:fo
 <section class="lb"><h2>🏆 Online High Scores</h2><div><input id="nick" maxlength="14" placeholder="Your name"> <button class="reset" id="nsave">Save name</button></div><ol id="lbl"></ol><div class="st" id="lst">Connecting…</div></section><div class="dex" id="dex"></div><div class="dex" id="mdex"></div>
 <div id="skins" class="hint" style="margin-top:14px"></div>
 <button class="reset" id="reset">Reset progress</button>
-<div class="hint" style="margin-top:18px">🧬 Chromosome Case · Made by Jace Glover · your progress, cards and scores follow your account.</div>
+<div class="hint" style="margin-top:18px">🧬 Chromosome Case · Made by Claude AI · your progress, cards and scores follow your account.</div>
 </main>
 <div id="start"></div>
 <script>
+(function(){
 var TIERS=[
 {n:"Common",o:2,lo:1,hi:100,c:"#7a8099"},
 {n:"Uncommon",o:8,lo:100,hi:1e3,c:"#2fb36b"},
@@ -238,11 +239,17 @@ var TIERS=[
 {n:"Eden",o:1e19,lo:1e65,hi:1e85,c:"#aaff5f"},
 {n:"Glover",o:1e24,lo:1e85,hi:1e100,c:"#e8f4ff"}
 ];
+var SALT="cc|7f3a91e2|kea-gr31g",LEGACY_UNTIL=Date.parse("2026-11-27T00:00:00Z");
+function hsh(t){var a=0xdeadbeef,b=0x41c6ce57;for(var i=0;i<t.length;i++){var c=t.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507)^Math.imul(a^(a>>>13),3266489909);return (4294967296*(2097151&b)+(a>>>0)).toString(36)}
+function sigOf(o){return hsh(SALT+[+o.best||0,+o.rolls||0,+o.dna||0,+o.lifetimeDNA||0,+o.luck||0,+o.cd||0,+o.yld||0,+o.mlab||0,+o.evo||0,+o.xp||0,+o.rare||0,(o.found||[]).length,(o.cards||[]).length,o.kg?1:0,o.flag?1:0].join("|"))}
+function sigOk(o){return o.sig?o.sig===sigOf(o):Date.now()<LEGACY_UNTIL}
+function plausible(){if(S.flag)return false;if(S.rare<0)return !(S.best>0);var t=TIERS[S.rare];if(!t)return false;if(S.best>t.hi*1e4*1.5*1.01)return false;if((S.dna||0)>(S.lifetimeDNA||0)*1.001+10)return false;if(S.found.indexOf(S.rare)<0)return false;if(S.rolls<S.found.length)return false;return true}
 var VER=2,S={ver:VER,best:0,rolls:0,rare:-1,found:[]};
 try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number"&&p.ver===VER)S=p}}catch(e){}
+if((S.rolls>0||S.dna>0||S.sig)&&!sigOk(S))S.flag=1;
 S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.xp=S.xp||0;S.rel=S.rel||{};S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
 function upMig(){if(S.uv!==2){S.luck=0;S.cd=0;S.yld=0;S.evo=0;S.dna=0;S.pm=0;S.uv=2}}upMig();
-function save(){try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
+function save(){S.sig=sigOf(S);try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
 function $(i){return document.getElementById(i)}
 function fmt(n){return Math.round(n).toLocaleString("en-US")}
 var U=["","K","M","B","T","Qa","Qi","Sx","Sp","Oc","No","Dc"];
@@ -456,7 +463,7 @@ var EV=[{n:"Meteor Shower ☄️",l:3},{n:"Blood Moon 🌑",l:5},{n:"DNA Storm �
 var WM=[1.5,1.25,1,.9,.8],WN=["Factory New","Minimal Wear","Field-Tested","Well-Worn","Battle-Scarred"];
 var ownCnt={},ownT;function ckey(c){return c.k+"."+c.md+"."+c.wi}
 function owners(c){if(!lbDB)return "Go online to see owners";var o=Math.max(0,(ownCnt[ckey(c)]||0)-1);return o?o+" other player"+(o>1?"s":"")+" own this card":"Only you own this card"}
-function pushOwn(){if(!lbDB||!uid||!S.cards.length)return;clearTimeout(ownT);ownT=setTimeout(function(){var ty={};S.cards.forEach(function(c){var k=ckey(c);ty[k]=(ty[k]||0)+1});lbDB.doc("owners/"+uid).set({name:nick||"Anon",types:ty,t:Date.now()}).catch(function(){});var it={},cs=[];S.cards.forEach(function(c){if(!c.id)c.id=newId();if(!c.id)return;cs.push(c.id);it[c.id]={k:c.k,md:c.md,wi:c.wi,fl:c.fl,s:c.s,n:c.n,d:c.d}});save();cards();lbDB.doc("certs/"+uid).set({nick:nick||"Anon",codes:cs,items:it,t:Date.now()}).catch(function(){})},1500)}
+function pushOwn(){if(!lbDB||!uid||!S.cards.length||S.flag)return;clearTimeout(ownT);ownT=setTimeout(function(){var ty={};S.cards.forEach(function(c){var k=ckey(c);ty[k]=(ty[k]||0)+1});lbDB.doc("owners/"+uid).set({name:nick||"Anon",types:ty,t:Date.now()}).catch(function(){});var it={},cs=[];S.cards.forEach(function(c){if(!c.id)c.id=newId();if(!c.id)return;cs.push(c.id);it[c.id]={k:c.k,md:c.md,wi:c.wi,fl:c.fl,s:c.s,n:c.n,d:c.d}});save();cards();lbDB.doc("certs/"+uid).set({nick:nick||"Anon",codes:cs,items:it,t:Date.now()}).catch(function(){})},1500)}
 function ownSub(db){db.collection("owners").onSnapshot(function(s){var o={};s.docs.forEach(function(d){var ty=(d.data()||{}).types||{};for(var k in ty)o[k]=(o[k]||0)+1});ownCnt=o;cards()},function(){})}
 var usr=null,shown=[],idPre="",AL="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 async function hpre(u){var b=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode("cc:"+u))),s="";for(var i=0;i<5;i++)s+=AL[b[i]%32];return s}
@@ -482,7 +489,7 @@ g.fillText("Card #"+String(c.n).padStart(5,"0")+" · "+c.d,W/2,600,520);
 g.font="800 28px "+F;g.fillText("🍀 ×"+xf(cLuck(c))+"   💠 ×"+xf(cDna(c)),W/2,642,520);
 g.font="800 34px "+F;g.fillText("Owner: "+(nick||"Player"),W/2,692,520);
 g.font="600 24px monospace";g.fillText(c.id?"CERT "+fid(c.id):"NOT CERTIFIED (offline)",W/2,735,520);
-g.font="500 17px "+F;g.fillText("Verify this code in the Chromosome Case page",W/2,775,520);g.font="600 15px "+F;g.fillText("Made by Jace Glover",W/2,805,520);
+g.font="500 17px "+F;g.fillText("Verify this code in the Chromosome Case page",W/2,775,520);g.font="600 15px "+F;g.fillText("Made by Claude AI",W/2,805,520);
 cv.toBlob(async function(b){var d=null;try{d=await claude.use("downloads")}catch(e){}if(d){try{await d.save({filename:"chromosome-card-"+(c.id||c.n)+".png",data:b});say("Card saved ✓","#f5c542");return}catch(e){if(e&&e.code==="declined"){say("Save cancelled.");return}}}showCard(cv.toDataURL("image/png"))},"image/png")}
 function showCard(url){var o=document.createElement("div"),im=new Image(),t=document.createElement("div"),b=document.createElement("button");o.style.cssText="position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px";im.src=url;im.style.cssText="max-height:75vh;max-width:92vw;border-radius:12px";t.style.cssText="color:#fff;font-size:.85rem;text-align:center";t.textContent="Right-click (or long-press) the card and choose Save image.";b.textContent="Close";b.style.cssText="width:auto;padding:10px 28px;margin:0";b.onclick=function(){o.remove()};o.onclick=function(e){if(e.target===o)o.remove()};o.appendChild(im);o.appendChild(t);o.appendChild(b);document.body.appendChild(o)}
 $("cards").addEventListener("click",function(e){var b=e.target.closest("button.dl");if(!b)return;var c=shown[+b.dataset.i];if(c)dlCard(c)});
@@ -500,13 +507,13 @@ out.textContent="✅ Authentic · "+(x.md>=0?MODS[x.md].n+" ":"")+t.n+" · score
 }catch(e){out.textContent="Couldn’t verify right now."}});
 function gate(k){var L=S[KEY[k]];if(k==="l")return L<12?-1:Math.min(14,1+Math.floor((L-12)/7));if(k==="y")return L<10?-1:Math.min(14,1+Math.floor((L-10)/6));return -1}
 var cloudT=0,cloudReady=false;
-function cloudMsg(t){$("cld").textContent=t}
+function cloudMsg(t){$("cld").textContent=S.flag?"⚠️ This save was changed outside the game, so online features are switched off. Reset progress to play fairly.":t}
 function norm(){upMig();S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.xp=S.xp||0;S.rel=S.rel||{};S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
 function cloudSave(){if(!lbDB||!uid||!cloudReady||cloudT)return;cloudT=setTimeout(function(){cloudT=0;cloudNow()},4000)}
-function cloudNow(){if(!lbDB||!uid)return;lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
+function cloudNow(){if(!lbDB||!uid||S.flag)return;S.sig=sigOf(S);lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
 async function loadCloud(){
-try{var s=await lbDB.doc("data/users/"+uid+"/progress").get(),d=s.exists&&s.data(),cr=d&&d.S&&d.S.ver===VER?(d.S.rolls||0):-1;
-if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$("nick").value=nick;try{localStorage.setItem("chrnick",nick)}catch(e){}}try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}stats();dex();hist();ups();cloudMsg("☁️ Progress loaded from your account");pushOwn();push()}
+try{var s=await lbDB.doc("data/users/"+uid+"/progress").get(),d=s.exists&&s.data(),cr=d&&d.S&&d.S.ver===VER&&sigOk(d.S)?(d.S.rolls||0):-1;
+if(cr>S.rolls){S=d.S;norm();S.sig=sigOf(S);if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$("nick").value=nick;try{localStorage.setItem("chrnick",nick)}catch(e){}}try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}stats();dex();hist();ups();cloudMsg("☁️ Progress loaded from your account");pushOwn();push()}
 else if(S.rolls>cr)cloudNow();else cloudMsg("☁️ Progress synced to your account")}
 catch(e){cloudMsg("Cloud save unavailable. Progress is saved in this browser.")}
 cloudReady=true}
@@ -567,7 +574,7 @@ if(ready&&streak>1)hook="🔥 Day "+streak+" streak! Keep it going.";
 else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/80)+" is building. A Mythic is overdue…";
 else if(!S.rolls)hook="New here? Open a case, collect DNA, buy upgrades and chase the rarest chromosome!";
 else hook=nx<0?"You’ve found every tier. Chase mutations and cards!":"Next tier to discover: ??? · "+oddsText(TIERS[nx].o);
-o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><div class="warn"><b>⚠️ Photosensitivity warning</b><br>This game has flashing lights, rapid colour changes and screen shake that may trigger seizures in people with photosensitive epilepsy. If you or anyone in your family has a history of seizures, speak to a doctor before playing. Stop playing and get medical help if you feel dizzy, disoriented or unwell.</div><button class="reset" id="calm">Reduce flashing: off</button><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="by">Made by Jace Glover</div>'}
+o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><div class="warn"><b>⚠️ Photosensitivity warning</b><br>This game has flashing lights, rapid colour changes and screen shake that may trigger seizures in people with photosensitive epilepsy. If you or anyone in your family has a history of seizures, speak to a doctor before playing. Stop playing and get medical help if you feel dizzy, disoriented or unwell.</div><button class="reset" id="calm">Reduce flashing: off</button><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="hint" style="max-width:340px">🛡️ Fair play: saves are checked. Edited saves lose the leaderboard, card certificates and account sync.</div><div class="by">Made by Claude AI</div>'}
 function play(){if(started)return;started=true;var o=$("start");o.classList.add("out");setTimeout(function(){o.style.display="none"},550);snd(523,.15,"triangle",.1);snd(784,.25,"triangle",.1,.1);daily()}
 $("start").addEventListener("click",function(e){if(e.target.closest("#play"))play()});
 function esc(s){return String(s).replace(/[&<>"']/g,function(m){return "&#"+m.charCodeAt(0)+";"})}
@@ -588,13 +595,13 @@ setInterval(function(){var n=Date.now(),ch=false;if(ev&&n>=evEnd){ev=null;ch=tru
 var lbDB=null,uid=null,nick="",pushT;
 try{nick=localStorage.getItem("chrnick")||""}catch(e){}
 $("nick").value=nick;
-function lbStatus(t){$("lst").textContent=t}
+function lbStatus(t){$("lst").textContent=S.flag?"Leaderboard is off for modified saves.":t}
 function renderLB(docs){var ol=$("lbl");ol.innerHTML="";docs.forEach(function(d,i){var x=d.data()||{},li=document.createElement("li"),a=document.createElement("span"),b=document.createElement("span");if(d.id===uid)li.className="me";a.textContent=(i+1)+". "+(x.name||"Anon");b.textContent=short(+x.best||0)+" · "+(TIERS[x.k]?TIERS[x.k].n:"");li.appendChild(a);li.appendChild(b);ol.appendChild(li)})}
-function push(){if(!lbDB||!uid||S.best<=0)return;clearTimeout(pushT);pushT=setTimeout(function(){lbDB.doc("scores/"+uid).set({name:nick||"Anon",best:S.best,k:S.rare,rolls:S.rolls,t:Date.now()}).then(function(){lbStatus("Score submitted ✓")}).catch(function(){lbStatus("Only Contributors can post scores. Ask the owner for access.")})},1500)}
+function push(){if(!lbDB||!uid||S.best<=0||!plausible())return;clearTimeout(pushT);pushT=setTimeout(function(){lbDB.doc("scores/"+uid).set({name:nick||"Anon",best:S.best,k:S.rare,rolls:S.rolls,t:Date.now()}).then(function(){lbStatus("Score submitted ✓")}).catch(function(){lbStatus("Only Contributors can post scores. Ask the owner for access.")})},1500)}
 $("nsave").addEventListener("click",function(){nick=$("nick").value.trim().slice(0,14)||"Anon";try{localStorage.setItem("chrnick",nick)}catch(e){}push();pushOwn();say("Name saved","#f5c542")});
 (async function(){try{
 var db=await claude.use("db"),user=await claude.use("user");
-if(!db||!user){lbStatus("Sign in to google (not working) to use the online leaderboard.");return}
+if(!db||!user){lbStatus("Sign in to claude.ai to use the online leaderboard.");return}
 uid=await user.id();idPre=await hpre(uid);lbDB=db;usr=user;loadCloud();
 var t=setTimeout(function(){lbStatus("Can’t reach the leaderboard yet…")},10000);
 db.collection("scores").orderBy("best","desc").limit(10).onSnapshot(function(s){clearTimeout(t);renderLB(s.docs);lbStatus(s.empty?"No scores yet. Be the first!":"Live · top 10")},function(){clearTimeout(t);lbStatus("Leaderboard unavailable.")});
@@ -616,6 +623,8 @@ var calm=false;try{var cs=localStorage.getItem("chrcalm");calm=cs==="1"||(cs===n
 function calmUI(){document.documentElement.classList.toggle("calm",calm);var b=$("calm");if(b)b.textContent="Reduce flashing: "+(calm?"on":"off")}
 $("start").addEventListener("click",function(e){if(e.target.closest("#calm")){calm=!calm;try{localStorage.setItem("chrcalm",calm?"1":"0")}catch(e2){}calmUI()}});
 calmUI();
+function cheatWarn(){var o=document.createElement("div");o.className="cw";o.innerHTML='<div><h2>⚠️ Cheat warning</h2><p>We found changes to your save that didn’t come from playing. Your leaderboard score, card certificates and account sync are now switched off. Please don’t edit the game or run hacks. You can reset your progress to start fresh and play fairly.</p></div>';var d=o.firstChild,b1=document.createElement("button"),b2=document.createElement("button");b1.textContent="Reset my progress";b2.textContent="I understand";b2.className="reset";b1.onclick=function(){var r=$("reset");r.click();r.click();o.remove()};b2.onclick=function(){o.remove()};d.appendChild(b1);d.appendChild(b2);document.body.appendChild(o)}
+if(S.flag){cloudMsg("");lbStatus("");cheatWarn()}
 var KGW="keagreig",kgBuf="";
 document.addEventListener("keydown",function(e){if(!started||S.kg||e.repeat||e.ctrlKey||e.metaKey||e.altKey)return;var t=e.target&&e.target.tagName;if(t==="INPUT"||t==="SELECT")return;var k=(e.key||"").toLowerCase();if(!/^[a-z]$/.test(k))return;kgBuf=(kgBuf+k).slice(-8);if(k==="a"&&kgBuf.slice(-3)==="kea")e.stopPropagation();if(kgBuf===KGW||kgBuf==="greigkea")unlockKG()},true);
 function unlockKG(){if(S.kg)return;S.kg=1;S.kgd=new Date().toLocaleDateString();save();stats();ups();dex();kgShow()}
@@ -639,6 +648,7 @@ function tog(){var m=!sc.classList.contains("min");set(m);st[id]=m?1:0;save2();l
 h.addEventListener("click",tog);h.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();e.stopPropagation();tog()}})});
 secs[0].parentNode.insertBefore(b,secs[0]);
 b.addEventListener("click",function(){var any=!!document.querySelector("section.lb:not(.min)");secs.forEach(function(sc){var h=sc.querySelector("h2");sc.classList.toggle("min",any);h.setAttribute("aria-expanded",String(!any));st[nm(h)]=any?1:0});save2();lbl()});lbl()})();
+})();
 </script>
 </body>
 </html>
