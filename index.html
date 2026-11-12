@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chromosome Case</title>
-<meta name="description" content="Open chromosome cases, chase mutations, collect certified cards and climb the online leaderboard."><meta name="theme-color" content="#0d0f1c">
+<meta name="description" content="Open chromosome cases, chase mutations, collect certified cards and level up, collect relics and climb the online leaderboard."><meta name="theme-color" content="#0d0f1c"><meta property="og:title" content="Chromosome Case"><meta property="og:description" content="Open chromosome cases, chase mutations and collect certified cards. How rare can you go?"><meta name="twitter:card" content="summary"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🧬%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f5fa;--card:#fff;--fg:#14172b;--mut:#6b7090;--bd:#dde0ee;--gold:#d98a00;--c:#7a8099;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -69,7 +69,6 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 .tier{font-size:1.6rem;text-transform:uppercase;letter-spacing:.12em;text-shadow:0 0 18px var(--c)}
 .score{font-size:2.6rem;font-weight:800;text-shadow:0 0 26px var(--c)}
 .reel{box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 0 24px -8px var(--c);border-color:color-mix(in srgb,var(--c) 45%,var(--bd))}
-.reel.pass{animation:rarity-pass .24s ease-out;border-color:var(--pass-color,var(--bd))}.it.passing{filter:brightness(1.35);box-shadow:0 0 18px var(--pass-color,var(--k));transform:translateY(-2px)}@keyframes rarity-pass{0%{box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 0 30px 2px var(--pass-color)}100%{box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 0 5px -5px var(--pass-color)}}
 .ptr{background:linear-gradient(#ffd23f,#fff3b0,#ffd23f)}.ptr:before,.ptr:after{content:"";position:absolute;left:50%;margin-left:-8px;border:8px solid transparent}.ptr:before{top:0;border-top-color:#ffd23f}.ptr:after{bottom:0;border-bottom-color:#ffd23f}
 .it{border:1px solid color-mix(in srgb,var(--k) 35%,transparent);border-bottom:5px solid var(--k);box-shadow:0 8px 16px -10px var(--k)}
 @keyframes wp{40%{transform:scale(1.14)}}.it.win{animation:wp .6s ease-out}
@@ -145,25 +144,37 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 @keyframes pulsebtn{50%{transform:scale(1.06);box-shadow:0 0 38px #ff3df0}}
 #start .by{color:var(--mut);font-size:.85rem;letter-spacing:.08em}
 .cd:is(.t11,.t12,.t13,.t14),.dex div.got:is(.t11,.t12,.t13,.t14){animation:gp 2.4s ease-in-out infinite}
-
+#beam{position:fixed;left:50%;top:0;width:36vmin;height:100%;margin-left:-18vmin;pointer-events:none;z-index:4;opacity:0;background:linear-gradient(90deg,transparent,var(--c),transparent);mix-blend-mode:screen;filter:blur(14px)}#beam.on{animation:bm 1.5s ease-out}@keyframes bm{0%{opacity:.85;transform:scaleX(.15)}100%{opacity:0;transform:scaleX(1.7)}}.bets button small{display:block;font-weight:500;color:var(--mut);font-size:.65rem}.bets button.on small{color:var(--gold)}.bets button:disabled{opacity:.45;cursor:not-allowed}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;background:radial-gradient(2px 2px at 20% 30%,color-mix(in srgb,var(--c) 70%,#fff),transparent),radial-gradient(3px 3px at 70% 60%,color-mix(in srgb,var(--c) 70%,#fff),transparent),radial-gradient(2px 2px at 40% 80%,#fff,transparent),radial-gradient(2px 2px at 85% 20%,#fff,transparent);background-size:240px 300px,320px 380px,200px 260px,280px 340px;animation:rise 45s linear infinite}@keyframes rise{to{background-position:0 -300px,0 -380px,0 -260px,0 -340px}}
+.reel:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,color-mix(in srgb,var(--c) 22%,transparent),transparent 62%)}
+.stage{box-shadow:0 20px 60px -24px var(--c),inset 0 1px 0 rgba(255,255,255,.12)}
+.score{background:linear-gradient(180deg,var(--fg),color-mix(in srgb,var(--c) 70%,var(--fg)));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 18px var(--c))}
+.stat{transition:transform .2s,box-shadow .2s}.stat:hover{transform:translateY(-3px);box-shadow:0 12px 26px -12px var(--c)}
+#go:not(.cd){animation:readyp 2.2s ease-in-out infinite}@keyframes readyp{50%{box-shadow:0 12px 40px -6px var(--c),0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}}
+.u{border:1px solid color-mix(in srgb,#7a5cff 35%,var(--bd))}.u:hover{border-color:#7a5cff}
+.lb h2{letter-spacing:.05em;text-shadow:0 0 14px color-mix(in srgb,var(--gold) 55%,transparent)}
+.lb{box-shadow:0 14px 40px -26px var(--gold)}
+.bets button{border-radius:12px;transition:transform .15s,box-shadow .2s}.bets button:not(:disabled):hover{transform:translateY(-2px)}.bets button.on{background:color-mix(in srgb,var(--gold) 14%,var(--card))}
+.hist i{transition:transform .2s}.hist i:hover{transform:scale(1.5)}
 .progression{text-align:left}.progression h2{text-align:center}.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px;margin:12px 0}.prog-stat{background:var(--bg);border:1px solid var(--bd);border-radius:11px;padding:11px}.prog-stat b{display:block;font-size:1.05rem}.prog-stat small{color:var(--mut)}.prog-track{height:9px;background:var(--bd);border-radius:99px;overflow:hidden;margin:8px 0}.prog-track i{display:block;height:100%;background:linear-gradient(90deg,#7a5cff,#ff3df0);border-radius:99px}.prog-milestone{padding:10px 0;border-bottom:1px solid var(--bd)}.prog-milestone:last-child{border:0}.prog-milestone b{display:block}.prog-milestone small{color:var(--mut)}
-
-/* Chromosome Case audiovisual polish */
-#stage.opening{animation:stagePulse .85s ease-in-out infinite alternate;box-shadow:0 0 28px color-mix(in srgb,var(--c) 45%,transparent),inset 0 0 30px color-mix(in srgb,var(--c) 16%,transparent)}
+.reel.pass{animation:rarity-pass .24s ease-out;border-color:var(--pass-color,var(--bd))}.it.passing{filter:brightness(1.35);box-shadow:0 0 18px var(--pass-color,var(--k));transform:translateY(-2px)}@keyframes rarity-pass{0%{box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 0 30px 2px var(--pass-color)}100%{box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 0 5px -5px var(--pass-color)}}
+#stage.opening{animation:stagePulse .85s ease-in-out infinite alternate}
 #stage.opening:after{content:"";position:absolute;inset:0;border:2px solid var(--c);border-radius:inherit;pointer-events:none;animation:scanPulse .7s ease-out infinite}
 #chr.pop{animation:chromosomeBurst .72s cubic-bezier(.15,.85,.25,1) both}
 #chr.legendary-pop{filter:drop-shadow(0 0 18px var(--c)) drop-shadow(0 0 34px var(--c))}
-#go{position:relative;overflow:hidden}
-#go:not(.cd):active{transform:scale(.975)}
 #go:not(.cd):before{content:"";position:absolute;top:-60%;left:-45%;width:35%;height:220%;transform:rotate(25deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);animation:buttonShimmer 2.8s ease-in-out infinite}
 #stage.flash{animation:revealFlash .55s ease-out}
-#fx{pointer-events:none}
 @keyframes stagePulse{from{box-shadow:0 0 12px color-mix(in srgb,var(--c) 22%,transparent)}to{box-shadow:0 0 42px color-mix(in srgb,var(--c) 70%,transparent),inset 0 0 38px color-mix(in srgb,var(--c) 25%,transparent)}}
 @keyframes scanPulse{0%{opacity:0;transform:scale(.94)}45%{opacity:.8}100%{opacity:0;transform:scale(1.04)}}
 @keyframes chromosomeBurst{0%{transform:scale(.62) rotate(-12deg);opacity:.2}55%{transform:scale(1.16) rotate(5deg);opacity:1}78%{transform:scale(.96) rotate(-2deg)}100%{transform:scale(1) rotate(0)}}
 @keyframes revealFlash{0%{filter:brightness(2.2)}100%{filter:brightness(1)}}
 @keyframes buttonShimmer{0%,65%{left:-45%}100%{left:130%}}
-
+html{scroll-behavior:smooth}::selection{background:var(--c);color:#fff}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.lb{transition:transform .2s,box-shadow .2s}.lb:hover{transform:translateY(-2px)}
+.lb h2{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.lb h2:after{content:"▾";float:right;transition:transform .2s;color:var(--mut)}.lb.min h2:after{transform:rotate(90deg)}.lb.min>:not(h2){display:none}.lb.min{padding-bottom:10px}.lb.min h2{margin:0}#colall{display:block;margin:14px auto 0}
+:root[data-skin="neon"]{--bg:#07040f;--card:#120a24;--fg:#f4eaff;--mut:#a58bd4;--bd:#3a1f6e;--gold:#ff3df0}:root[data-skin="void"]{--bg:#000;--card:#0b0b10;--fg:#e6e6ee;--mut:#7c7c90;--bd:#1b1b26;--gold:#b04dff}:root[data-skin="sunset"]{--bg:#1a0b14;--card:#2a1220;--fg:#fff0e6;--mut:#d6a08c;--bd:#5a2a3a;--gold:#ffb347}.reset.on{color:var(--gold);font-weight:800;text-decoration:none}.reset:disabled{opacity:.5;cursor:not-allowed}
+#fx{z-index:100}.kgo{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(255,122,26,.45),rgba(8,10,20,.94) 70%);animation:kgin .5s ease-out;cursor:pointer;padding:20px}.kgc{text-align:center;color:#fff;max-width:340px}.kgb{font-size:6rem;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 28px #ff7a1a)}.kgc h2{font-size:2.2rem;margin:6px 0;letter-spacing:.06em;background:linear-gradient(90deg,#7fa02b,#ffb066,#ff7a1a,#7fa02b);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 3s linear infinite}.kgs{font-weight:800;color:#ffd23f}.kgn{color:#cfd3f0;margin:8px 0 12px;font-size:.9rem}@keyframes kgin{from{opacity:0;transform:scale(1.15)}to{opacity:1;transform:none}}
+.ach div.on{box-shadow:0 0 14px -6px var(--gold)}.prog-track i{box-shadow:0 0 10px #7a5cff}
 </style>
 </head>
 <body>
@@ -175,6 +186,7 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 <div class="stat"><b id="dna">0</b><span>DNA</span></div>
 <div class="stat"><b id="lk">×1</b><span>Luck</span></div>
 <div class="stat"><b id="rolls">0</b><span>Rolls</span></div>
+<div class="stat"><b id="lvl">0</b><span>Level</span></div>
 <div class="stat"><b id="rare">–</b><span>Rarest found</span></div>
 </div>
 <div class="stage" id="stage">
@@ -189,16 +201,19 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 </div>
 <button id="go"><span id="gl">Open case (Space)</span><i id="bar"></i></button>
 <div id="msg"></div>
-<button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button>
-<canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to Github (Not Working Right Now) to also sync it to your account.</div>
-<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck. Every 50th case is a Bonus Case with ×4 luck, and the Mutation Lab boosts mutation chances.</div>
+<button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button><button id="mus" class="reset">Music: off</button><button id="share" class="reset">📣 Share my best</button>
+<div id="beam"></div><canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
+<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck. Every 40th case is a Bonus Case (×4 luck) and the Mutation Lab boosts mutation chances. 1 in 10 cases is a Throwback with no luck applied, so Commons never disappear. Gain XP every roll to level up (+2% luck per level) and find Relics at random.</div>
 <div class="up" id="up"></div>
 <section class="lb progression" id="progression"><h2>🧬 Long-term progression</h2><div id="progbody"></div></section>
 <div class="hint" style="margin-top:14px">Odds below are base odds. Luck multiplies your chances, and it never caps out.</div>
+<section class="lb"><h2>📋 Daily Missions <span id="qcount"></span></h2><div id="qlist"></div><div class="st">Three new missions every day, each paying DNA. Finish all three for a free relic.</div></section>
+<section class="lb"><h2>🔮 Relics <span id="rcount"></span></h2><div class="ach" id="relics"></div><div class="st">Relics drop at random (about 1 in 16 cases). Each copy stacks, up to 30.</div></section>
 <section class="lb"><h2>🏅 Achievements <span id="acount"></span></h2><div class="st" id="strk"></div><div class="ach" id="ach"></div></section>
 
 <section class="lb"><h2>🃏 Card Collection <span id="ccount"></span></h2><div class="st" id="eqinfo"></div><div class="cards" id="cards"></div><div class="st">Every Epic or better drop (or Radioactive+ mutation) mints a numbered, certified card with luck and DNA boosts: the rarer, the stronger. Equip cards to use their boosts (more slots with each Evolve). Your top 24 are shown. Download one as an image; it carries a certificate code that proves who minted it.</div></section><section class="lb"><h2>🔍 Verify a Card</h2><div><input id="vcode" placeholder="Certificate code"> <button class="reset" id="vgo">Verify</button></div><div class="st" id="vres">Paste the certificate code from a card to see who really minted it.</div></section>
 <section class="lb"><h2>🏆 Online High Scores</h2><div><input id="nick" maxlength="14" placeholder="Your name"> <button class="reset" id="nsave">Save name</button></div><ol id="lbl"></ol><div class="st" id="lst">Connecting…</div></section><div class="dex" id="dex"></div><div class="dex" id="mdex"></div>
+<div id="skins" class="hint" style="margin-top:14px"></div>
 <button class="reset" id="reset">Reset progress</button>
 <div class="hint" style="margin-top:18px">🧬 Chromosome Case · Made by Jace Glover · your progress, cards and scores follow your account.</div>
 </main>
@@ -210,7 +225,7 @@ var TIERS=[
 {n:"Rare",o:40,lo:1e3,hi:1e4,c:"#2f7bf0"},
 {n:"Epic",o:600,lo:1e4,hi:1e6,c:"#9b4de8"},
 {n:"Legendary",o:9000,lo:1e6,hi:1e8,c:"#f0a020"},
-{n:"Mythic",o:150000,lo:1e8,hi:1e10,c:"#e8374f"},
+{n:"Mythic",o:40000,lo:1e8,hi:1e10,c:"#e8374f"},
 {n:"Mutant",o:2.5e6,lo:1e10,hi:1e12,c:"#14c8d8"},
 {n:"Genome Prime",o:4e7,lo:1e12,hi:1e14,c:"#ff3df0"},
 {n:"Cosmic",o:1.2e9,lo:1e14,hi:1e17,c:"#6bff7a"},
@@ -224,7 +239,7 @@ var TIERS=[
 ];
 var VER=2,S={ver:VER,best:0,rolls:0,rare:-1,found:[]};
 try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number"&&p.ver===VER)S=p}}catch(e){}
-S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];
+S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.xp=S.xp||0;S.rel=S.rel||{};S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
 function upMig(){if(S.uv!==2){S.luck=0;S.cd=0;S.yld=0;S.evo=0;S.dna=0;S.pm=0;S.uv=2}}upMig();
 function save(){try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
 function $(i){return document.getElementById(i)}
@@ -246,11 +261,18 @@ $("chr").innerHTML=b;
 }
 /* upgrades: luck has no cap */
 function evoMul(){return Math.pow(2,S.evo)}
+var CASE=0,cm=1,CM=[1,3,10],RELICS=[{n:"Lucky Clover",e:"🍀",d:"+10% luck"},{n:"Golden Helix",e:"🧬",d:"+15% DNA"},{n:"Mutation Magnet",e:"🧲",d:"+10% mutation chance"},{n:"Quick Hands",e:"⚡",d:"-3% cooldown"}];
+function lvl(){return Math.floor(Math.sqrt((S.xp||0)/40))}
+function rel(i){return (S.rel&&S.rel[i])||0}
+function relTot(){var n=0;for(var k in (S.rel||{}))n+=S.rel[k];return n}
+function caseCost(i){return i===1?Math.max(250,S.dna*.25):i===2?Math.max(2500,S.dna*.75):0}
+function cases(){}
+function relicUI(){var n=0;$("relics").innerHTML=RELICS.map(function(r,i){var c=rel(i);n+=c;return '<div class="'+(c?"on":"")+'">'+r.e+' '+r.n+' ×'+c+'<small>'+r.d+' each</small></div>'}).join("");$("rcount").textContent="· "+n}
 function lvMul(n){return Math.pow(1.25,Math.min(n,15))*Math.pow(1.08,Math.max(0,n-15))}
 function mileMul(){return (1+.04*S.found.length+.03*Object.keys(S.mut).length)*(1+.02*(S.ach||[]).length)}
-function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/80)*eqLuck()*(hot>0?1.25:1)*(ev&&ev.l||1)}
-function yMul(){return Math.pow(1.2,S.yld)*eqDna()*(ev&&ev.y||1)}
-function cdSec(){return Math.max(0.2,1.5*Math.pow(0.9,S.cd)*(ev&&ev.cd||1))}
+function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/80)*eqLuck()*(hot>0?1.25:1)*(ev&&ev.l||1)*(1+.02*lvl())*Math.pow(1.1,rel(0))*(S.kg?1.25:1)}
+function yMul(){return Math.pow(1.2,S.yld)*eqDna()*(ev&&ev.y||1)*Math.pow(1.15,rel(1))*(S.kg?1.25:1)}
+function cdSec(){return Math.max(0.2,1.5*Math.pow(0.9,S.cd)*Math.pow(.97,rel(3))*(ev&&ev.cd||1))}
 var CMAX=16;
 var ES=function(){return Math.pow(2.2,S.evo)},COST={
  l:function(){return Math.round(45*Math.pow(1.72,S.luck)*ES())},
@@ -262,20 +284,20 @@ var DNA_REWARDS=[2,3,6,14,35,85,190,430,950,2100,4700,10500,24000,55000,125000,3
 function evoCost(){return Math.round(25000*Math.pow(5,S.evo))}
 function evoNeed(){return 28+10*S.evo}function evoTier(){return Math.min(14,4+S.evo)}function canEvo(){return S.luck>=evoNeed()&&S.rare>=evoTier()&&S.dna>=evoCost()}
 function pick(){
-var bn=(S.rolls+1)%50===0,r=Math.random()/(luckMul()*(bn?4:1)),k=0;if(bn)say("🎰 BONUS CASE! Luck ×4 on this roll","#ffd23f");
+var bn=(S.rolls+1)%40===0,nl=Math.random()<.1&&!bn&&cm===1,r=Math.random()/(nl?1:luckMul()*cm*(bn?4:1)),k=0;if(bn)say("🎰 BONUS CASE! Luck ×4 on this roll","#ffd23f");
 for(var i=TIERS.length-1;i>=0;i--){if(r<1/TIERS[i].o){k=i;break}}
 var t=TIERS[k],s=Math.exp(Math.log(t.lo)+Math.random()*(Math.log(t.hi)-Math.log(t.lo)));
-var md=-1,lm=Math.pow(luckMul(),.3)*Math.pow(1.25,S.mlab||0),fl=Math.random(),wi=fl<.07?0:fl<.15?1:fl<.38?2:fl<.45?3:4;for(i=MODS.length-1;i>=0;i--)if(Math.random()<lm/MODS[i].o){md=i;break}
+var md=-1,lm=Math.pow(luckMul(),.3)*Math.pow(1.25,S.mlab||0)*Math.pow(1.1,rel(2))*(cm>1?2:1),fl=Math.random(),wi=fl<.07?0:fl<.15?1:fl<.38?2:fl<.45?3:4;for(i=MODS.length-1;i>=0;i--)if(Math.random()<lm/MODS[i].o){md=i;break}
 return {k:k,s:Math.round(s*(md>=0?MODS[md].m:1)*WM[wi]),md:md,fl:fl,wi:wi};
 }
-function dex(){mdex();cards();ach();
+function dex(){mdex();cards();ach();relicUI();qUI();skinsUI();
 $("dex").innerHTML=TIERS.map(function(t,i){
 var g=S.found.indexOf(i)>-1;
 return '<div class="'+(g?"got t"+i:"")+'" style="--k:'+t.c+'">'+(g?t.n+" · ×"+fmt(S.cnt[i]||0):"???")+'<small>'+oddsText(t.o)+'</small></div>'}).join("");
 }
 function hist(){$("hist").innerHTML=S.hist.map(function(k){return '<i style="--k:'+TIERS[k].c+'" title="'+TIERS[k].n+'"></i>'}).join("")}
 function stats(){
-$("best").textContent=short(S.best);$("dna").textContent=short(S.dna);$("rolls").textContent=fmt(S.rolls);
+$("best").textContent=short(S.best);$("lvl").textContent=lvl();$("dna").textContent=short(S.dna);$("rolls").textContent=fmt(S.rolls);
 $("rare").textContent=S.rare<0?"–":TIERS[S.rare].n;$("lk").textContent="×"+xf(luckMul());
 }
 var busy=false,auto=false,cdEnd=0,pen=0,hits=[],lastS=0,msgT,AC=null,muted=false,P=[],raf=0,at,evArm=false;
@@ -283,7 +305,8 @@ function toggleAuto(){auto=!auto;$("auto").textContent="Auto-roll: "+(auto?"on":
 function autoRoll(){clearTimeout(at);if(!auto)return;var w=cdEnd-performance.now();if(busy||w>0)at=setTimeout(autoRoll,Math.max(50,w+20));else roll()}
 function roll(){
 if(busy||performance.now()<cdEnd)return;busy=true;
-var r=pick(),dur=Math.max(1400,Math.min(3200,cdSec()*1500+1000))+r.k*120+(r.md+1)*150;
+cm=1;if(CASE>0){var cc=caseCost(CASE);if(S.dna>=cc){S.dna-=cc;cm=CM[CASE]}else CASE=0}
+var r=pick();cm=1;var dur=Math.max(1400,Math.min(3200,cdSec()*1500+1000))+r.k*120+(r.md+1)*150;
 caseWhoosh();$("stage").classList.add("opening");shake($("stage"));
 document.documentElement.style.setProperty("--c","#7a8099");
 $("chr").classList.remove("pop");$("chr").style.filter="";$("chr").style.opacity=.15;
@@ -308,12 +331,15 @@ $("tier").textContent=(r.md>=0?MODS[r.md].n+" ":"")+t.n;$("odds").textContent=od
 $("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"")+" · pity ×"+xf(1+(S.pm||0)/80)+(hot>0?" · 🔥 hot streak ×1.25 ("+hot+")":"");
 $("new").classList.toggle("on",nb);
 var st=$("stage");st.classList.remove("flash");if(r.k>=3){void st.getBoundingClientRect();st.classList.add("flash")}
-S.dna+=gain;S.lifetimeDNA=(S.lifetimeDNA||0)+gain;stats();dex();hist();ups();progression();save();if(nb)push();
+qProg(r);var l0=lvl();S.xp=(S.xp||0)+1+r.k*4+(r.md>=0?15:0);if(lvl()>l0)setTimeout(function(){say("⭐ LEVEL UP! Level "+lvl()+" (+2% luck)","#ffd23f");snd(880,.2,"triangle",.1)},1400);
+if(Math.random()<.06){var ri=Math.floor(Math.random()*RELICS.length);S.rel=S.rel||{};if((S.rel[ri]||0)<30){S.rel[ri]=(S.rel[ri]||0)+1;setTimeout(function(){say("🔮 RELIC FOUND: "+RELICS[ri].e+" "+RELICS[ri].n+" ("+RELICS[ri].d+")","#c58bff");snd(1047,.3,"triangle",.1)},2200)}}
+if(r.k>=4){var bm=$("beam");bm.classList.remove("on");void bm.offsetWidth;bm.classList.add("on")}
+S.dna+=gain;S.lifetimeDNA=(S.lifetimeDNA||0)+gain;stats();dex();hist();ups();save();if(nb)push();
 busy=false;
 cdEnd=performance.now()+cdSec()*1000+pen;pen=0;cdLoop();
 if(auto)setTimeout(autoRoll,cdSec()*1000+100);
 }
-function ups(){
+function ups(){cases();progression();
 var h="";
 function card(k,title,desc,lvl,max){
 var cost=COST[k](),nd=gate(k),lock=nd>S.rare,can=S.dna>=cost&&!max&&!lock;
@@ -323,32 +349,35 @@ h+=card("l","Luck Lv "+S.luck,"Now ×"+xf(luckMul())+" → ×"+xf(luckMul()*lvMu
 h+=card("c","Cooldown Lv "+S.cd,"Now "+cdSec().toFixed(2)+"s"+(S.cd>=CMAX?"":" → "+Math.max(0.2,1.5*Math.pow(0.9,S.cd+1)).toFixed(2)+"s"),S.cd,S.cd>=CMAX);
 h+=card("y","DNA Yield Lv "+S.yld,"Now ×"+xf(yMul())+" → ×"+xf(yMul()*1.2));
 h+=card("m","Mutation Lab Lv "+(S.mlab||0),"Mutation chance ×"+xf(Math.pow(1.25,S.mlab||0))+" → ×"+xf(Math.pow(1.25,(S.mlab||0)+1)));
-h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Requires Luck Lv '+evoNeed()+', a '+TIERS[evoTier()].n+' discovery and '+short(evoCost())+' DNA. The price rises ×5 each stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve · "+short(evoCost())+" DNA")+'</button></div></div>';
+h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Requires Luck Lv '+evoNeed()+', a '+TIERS[evoTier()].n+' discovery and '+short(evoCost())+' DNA. The price rises ×5 each stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve")+'</button></div></div>';
 $("up").innerHTML=h;
 }
 function progression(){
- var milestones=[
-  {id:"roll100",name:"First 100 cases",desc:"Open 100 cases",v:S.rolls,g:100,reward:"Collector milestone"},
-  {id:"roll1000",name:"Dedicated researcher",desc:"Open 1,000 cases",v:S.rolls,g:1000,reward:"Research milestone"},
-  {id:"roll10000",name:"Chromosome expert",desc:"Open 10,000 cases",v:S.rolls,g:10000,reward:"Veteran milestone"},
-  {id:"tiers8",name:"Wide genetic catalogue",desc:"Discover 8 different rarities",v:S.found.length,g:8,reward:"Discovery milestone"},
-  {id:"tiers16",name:"Complete rarity index",desc:"Discover all 16 rarities",v:S.found.length,g:16,reward:"Completion milestone"},
-  {id:"evo5",name:"Evolution path",desc:"Reach Evolution 5",v:S.evo,g:5,reward:"Prestige milestone"}
- ];
- var done=milestones.filter(function(m){return m.v>=m.g}).length;
- $("progbody").innerHTML='<div class="prog-grid"><div class="prog-stat"><b>'+short(S.lifetimeDNA||0)+'</b><small>Lifetime DNA earned</small></div><div class="prog-stat"><b>'+short(S.dnaSpent||0)+'</b><small>DNA invested</small></div><div class="prog-stat"><b>'+S.evo+'</b><small>Evolution stage</small></div><div class="prog-stat"><b>'+done+'/'+milestones.length+'</b><small>Milestones reached</small></div></div><div><b>Milestone track</b><div class="prog-track"><i style="width:'+(done/milestones.length*100)+'%"></i></div></div>'+milestones.map(function(m){var pct=Math.min(100,m.v/m.g*100),complete=pct>=100;return '<div class="prog-milestone"><b>'+(complete?'✅ ':'🔒 ')+m.name+'</b><small>'+m.desc+' · '+Math.min(m.v,m.g).toLocaleString()+'/'+m.g.toLocaleString()+' · '+m.reward+'</small><div class="prog-track"><i style="width:'+pct+'%"></i></div></div>'}).join('');
+ S.claimedMilestones=S.claimedMilestones||[];
+ var M=[
+  {id:"roll100",name:"First 100 cases",desc:"Open 100 cases",v:S.rolls,g:100,dna:500},
+  {id:"lvl10",name:"Rising researcher",desc:"Reach player level 10",v:lvl(),g:10,dna:5000},
+  {id:"relic5",name:"Relic collector",desc:"Own 5 relics",v:relTot(),g:5,dna:3000},
+  {id:"tiers8",name:"Wide genetic catalogue",desc:"Discover 8 rarities",v:S.found.length,g:8,dna:50000},
+  {id:"roll1000",name:"Dedicated researcher",desc:"Open 1,000 cases",v:S.rolls,g:1000,dna:20000},
+  {id:"roll10000",name:"Chromosome expert",desc:"Open 10,000 cases",v:S.rolls,g:10000,dna:2e6},
+  {id:"tiers16",name:"Complete rarity index",desc:"Discover all 16 rarities",v:S.found.length,g:16,dna:5e7},
+  {id:"evo5",name:"Evolution path",desc:"Reach Evolution 5",v:S.evo,g:5,dna:1e8}];
+ M.forEach(function(m){if(m.v>=m.g&&S.claimedMilestones.indexOf(m.id)<0){S.claimedMilestones.push(m.id);S.dna+=m.dna;S.lifetimeDNA=(S.lifetimeDNA||0)+m.dna;setTimeout(function(){say("🏁 Milestone: "+m.name+" · +"+short(m.dna)+" DNA","#2fd37b");snd(784,.2,"triangle",.1)},2600);stats()}});
+ var done=M.filter(function(m){return m.v>=m.g}).length;
+ $("progbody").innerHTML='<div class="prog-grid"><div class="prog-stat"><b>'+short(S.lifetimeDNA||0)+'</b><small>Lifetime DNA earned</small></div><div class="prog-stat"><b>'+short(S.dnaSpent||0)+'</b><small>DNA invested</small></div><div class="prog-stat"><b>'+S.evo+'</b><small>Evolution stage</small></div><div class="prog-stat"><b>'+done+'/'+M.length+'</b><small>Milestones reached</small></div></div><div class="prog-track"><i style="width:'+(done/M.length*100)+'%"></i></div>'+M.map(function(m){var pct=Math.min(100,m.v/m.g*100),ok=pct>=100;return '<div class="prog-milestone"><b>'+(ok?'✅ ':'🔒 ')+m.name+'</b><small>'+m.desc+' · '+Math.min(m.v,m.g).toLocaleString()+'/'+m.g.toLocaleString()+' · reward +'+short(m.dna)+' DNA</small><div class="prog-track"><i style="width:'+pct+'%"></i></div></div>'}).join('');
 }
 function buy(k,max){
 var key=KEY[k],n=0;
 while(S.dna>=COST[k]()&&n<2000){if(k==="c"&&S.cd>=CMAX)break;if(gate(k)>S.rare)break;S.dna-=COST[k]();S.dnaSpent=(S.dnaSpent||0)+COST[k]();S[key]++;n++;if(!max)break}
-if(n){stats();ups();progression();save();snd(660,.12,"triangle",.07)}
+if(n){stats();ups();save();snd(660,.12,"triangle",.07)}
 }
 function evolve(){
 if(!canEvo())return;
 if(!evArm){evArm=true;ups();setTimeout(function(){evArm=false;ups()},3000);return}
-evArm=false;S.dna-=evoCost();S.dnaSpent=(S.dnaSpent||0)+evoCost();S.evo++;S.dna=0;S.luck=0;S.cd=0;S.yld=0;S.mlab=0;
+evArm=false;S.dnaSpent=(S.dnaSpent||0)+evoCost();S.evo++;S.dna=0;S.luck=0;S.cd=0;S.yld=0;S.mlab=0;
 say("EVOLVED! Permanent bonus ×"+fmt(evoMul()),"#9b4de8");snd(523,.3,"triangle",.1);snd(784,.4,"triangle",.1,.15);boom(120,"#9b4de8");
-stats();ups();progression();save();
+stats();ups();save();
 }
 $("up").addEventListener("click",function(e){
 var b=e.target.closest("button");if(!b||b.disabled)return;
@@ -365,48 +394,11 @@ var HYPE=["","","","","LEGENDARY!","MYTHIC PULL!!","MUTANT ALERT!!!","🎉 GENOM
 function quip(k){var a=QUIPS[k];return a[Math.floor(Math.random()*a.length)]}
 function say(t,c){var m=$("msg");m.textContent=t;m.style.color=c||"#e8374f";m.classList.add("on");clearTimeout(msgT);msgT=setTimeout(function(){m.classList.remove("on")},2600)}
 function snd(f,d,ty,v,dl){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(dl||0);o.type=ty||"sine";o.frequency.value=f;g.gain.setValueAtTime(v||.08,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d)}catch(e){}}
-
-function sweepSound(start,end,duration,wave,volume,delay){
- if(muted)return;
- try{
-  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
-  if(AC.state==="suspended")AC.resume();
-  var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(delay||0);
-  o.type=wave||"sawtooth";o.frequency.setValueAtTime(Math.max(25,start),t);
-  o.frequency.exponentialRampToValueAtTime(Math.max(25,end),t+duration);
-  g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(volume||.045,t+.035);
-  g.gain.exponentialRampToValueAtTime(.0001,t+duration);
-  o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+duration+.02);
- }catch(e){}
-}
-function noiseHit(duration,volume,delay,filterFreq){
- if(muted)return;
- try{
-  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
-  if(AC.state==="suspended")AC.resume();
-  var count=Math.floor(AC.sampleRate*duration),buf=AC.createBuffer(1,count,AC.sampleRate),data=buf.getChannelData(0);
-  for(var i=0;i<count;i++)data[i]=(Math.random()*2-1)*(1-i/count);
-  var src=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),t=AC.currentTime+(delay||0);
-  src.buffer=buf;f.type="lowpass";f.frequency.value=filterFreq||1800;
-  g.gain.setValueAtTime(volume||.06,t);g.gain.exponentialRampToValueAtTime(.0001,t+duration);
-  src.connect(f);f.connect(g);g.connect(AC.destination);src.start(t);src.stop(t+duration);
- }catch(e){}
-}
-function caseWhoosh(){
- sweepSound(150,820,.72,"sawtooth",.035);
- sweepSound(90,260,.85,"triangle",.055,.08);
- noiseHit(.55,.045,.02,1200);
- snd(65,.45,"sine",.09,.12);
-}
-function raritySting(k){
- var base=[261.6,293.7,329.6,392,440,523.3,587.3,659.3,784,880,987.8,1046.5,1174.7,1318.5,1568,1760][k]||440;
- var notes=k>=10?[1,1.25,1.5,2,2.5]:k>=6?[1,1.25,1.5]:[1,1.5];
- notes.forEach(function(m,i){snd(base*m,.34,"triangle",k>=10?.075:.055,.045+i*.095)});
- if(k>=4){noiseHit(.22,k>=10?.11:.065,.02,2600);sweepSound(base*2,base*4,.32,"sine",.035,.08)}
- if(k>=8)sweepSound(110,880,.65,"sine",.045,.12);
-}
-
 var lt=0;function tickSound(){var n=performance.now();if(n-lt<45)return;lt=n;snd(500+Math.random()*300,.04,"square",.025);snd(95,.035,"sine",.018)}
+function sweepSound(a,b,d,w,v,dl){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(dl||0);o.type=w||"sawtooth";o.frequency.setValueAtTime(Math.max(25,a),t);o.frequency.exponentialRampToValueAtTime(Math.max(25,b),t+d);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v||.045,t+.035);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d+.02)}catch(e){}}
+function noiseHit(d,v,dl,ff){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var n=Math.floor(AC.sampleRate*d),buf=AC.createBuffer(1,n,AC.sampleRate),a=buf.getChannelData(0);for(var i=0;i<n;i++)a[i]=(Math.random()*2-1)*(1-i/n);var src=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),t=AC.currentTime+(dl||0);src.buffer=buf;f.type="lowpass";f.frequency.value=ff||1800;g.gain.setValueAtTime(v||.06,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);src.connect(f);f.connect(g);g.connect(AC.destination);src.start(t);src.stop(t+d)}catch(e){}}
+function caseWhoosh(){sweepSound(150,820,.72,"sawtooth",.035);sweepSound(90,260,.85,"triangle",.055,.08);noiseHit(.55,.045,.02,1200);snd(65,.45,"sine",.09,.12)}
+function raritySting(k){var base=[261.6,293.7,329.6,392,440,523.3,587.3,659.3,784,880,987.8,1046.5,1174.7,1318.5,1568,1760][k]||440,notes=k>=10?[1,1.25,1.5,2,2.5]:k>=6?[1,1.25,1.5]:[1,1.5];notes.forEach(function(m,i){snd(base*m,.34,"triangle",k>=10?.075:.055,.045+i*.095)});if(k>=4){noiseHit(.22,k>=10?.11:.065,.02,2600);sweepSound(base*2,base*4,.32,"sine",.035,.08)}if(k>=8)sweepSound(110,880,.65,"sine",.045,.12)}
 function shake(el){el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake")}
 function press(rep){
 var n=performance.now();
@@ -426,8 +418,8 @@ snd(b[k],.25,"triangle",.1);
 if(k>=2)snd(b[k]*1.25,.25,"triangle",.09,.12);
 if(k>=4)snd(b[k]*1.5,.4,"triangle",.09,.24);
 if(k>=6)snd(b[k]*2,.6,"sine",.1,.4);if(k>=15)[1,1.25,1.5,2,2.5,3].forEach(function(m,i){snd(b[k]*m,.5,"triangle",.1,.5+i*.15)});
-if(k>=3)boom(k>=15?700:k>=11?500:k>=9?420:k>=7?320:k>=5?160:70,c);if(k>=15)glover();
-if(k>=5){shake(document.querySelector("main"));sweepSound(75,38,.42,"sine",.12);noiseHit(.38,.12,.02,700)}
+if(k>=3)boom(k>=15?700:k>=11?500:k>=9?420:k>=7?320:k>=5?160:70,c);if(k>=15)glover();if(k>=5){shake(document.querySelector("main"));sweepSound(75,38,.42,"sine",.12);noiseHit(.38,.12,.02,700)}
+if(k>=5)shake(document.querySelector("main"));
 if(HYPE[k])say(HYPE[k],c);
 }
 function boom(n,c){
@@ -443,6 +435,7 @@ g.globalAlpha=1;
 if(P.length)raf=requestAnimationFrame(fxLoop);else{raf=0;g.clearRect(0,0,cv.width,cv.height)}
 }
 $("auto").addEventListener("click",toggleAuto);
+$("share").addEventListener("click",function(){var t="🧬 I pulled "+(S.rare<0?"my first chromosome":"a "+TIERS[S.rare].n)+" in Chromosome Case! Best score "+short(S.best)+" after "+fmt(S.rolls)+" cases. Can you beat it? "+location.href.split("#")[0];if(navigator.share){navigator.share({title:"Chromosome Case",text:t}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){say("Copied to clipboard ✓","#2fd37b")}).catch(function(){say("Couldn’t copy")})}});
 $("mute").addEventListener("click",function(){muted=!muted;this.textContent="Sound: "+(muted?"off":"on");this.blur()});
 document.addEventListener("keydown",function(e){if(e.target&&e.target.tagName==="INPUT")return;if(!started){if(e.code==="Space"||e.code==="Enter"){e.preventDefault();play()}return}
 if(e.code==="Space"||e.key===" "){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();press(e.repeat)}
@@ -453,7 +446,7 @@ $("stage").addEventListener("click",function(){press(false)});
 $("reset").addEventListener("click",function(){
 if(!this.dataset.arm){this.dataset.arm=1;this.textContent="Click again to erase everything";var b=this;setTimeout(function(){delete b.dataset.arm;b.textContent="Reset progress"},3000);return}
 delete this.dataset.arm;this.textContent="Reset progress";
-if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={ver:VER,best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,mlab:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();progression();
+if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={ver:VER,best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,mlab:0,xp:0,rel:{},evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
 $("tier").textContent="Ready";$("odds").textContent="Press space to begin";$("score").textContent="0";$("gain").textContent="";$("new").classList.remove("on");
 document.documentElement.style.setProperty("--c","#7a8099");draw(TIERS[0]);idle();
 });
@@ -507,12 +500,12 @@ out.textContent="✅ Authentic · "+(x.md>=0?MODS[x.md].n+" ":"")+t.n+" · score
 function gate(k){var L=S[KEY[k]];if(k==="l")return L<12?-1:Math.min(14,1+Math.floor((L-12)/7));if(k==="y")return L<10?-1:Math.min(14,1+Math.floor((L-10)/6));return -1}
 var cloudT=0,cloudReady=false;
 function cloudMsg(t){$("cld").textContent=t}
-function norm(){upMig();S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
+function norm(){upMig();S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.xp=S.xp||0;S.rel=S.rel||{};S.lifetimeDNA=S.lifetimeDNA||S.dna||0;S.dnaSpent=S.dnaSpent||0;S.claimedMilestones=S.claimedMilestones||[];S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
 function cloudSave(){if(!lbDB||!uid||!cloudReady||cloudT)return;cloudT=setTimeout(function(){cloudT=0;cloudNow()},4000)}
 function cloudNow(){if(!lbDB||!uid)return;lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
 async function loadCloud(){
 try{var s=await lbDB.doc("data/users/"+uid+"/progress").get(),d=s.exists&&s.data(),cr=d&&d.S&&d.S.ver===VER?(d.S.rolls||0):-1;
-if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$("nick").value=nick;try{localStorage.setItem("chrnick",nick)}catch(e){}}try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}stats();dex();hist();ups();progression();cloudMsg("☁️ Progress loaded from your account");pushOwn();push()}
+if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$("nick").value=nick;try{localStorage.setItem("chrnick",nick)}catch(e){}}try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}stats();dex();hist();ups();cloudMsg("☁️ Progress loaded from your account");pushOwn();push()}
 else if(S.rolls>cr)cloudNow();else cloudMsg("☁️ Progress synced to your account")}
 catch(e){cloudMsg("Cloud save unavailable. Progress is saved in this browser.")}
 cloudReady=true}
@@ -550,13 +543,20 @@ var hot=0,ACH=[
 {n:"Case Hoarder",d:"Open 25,000 cases",f:function(){return S.rolls>=25000}},
 {n:"Card Shark",d:"Own 50 cards",f:function(){return S.cards.length>=50}},
 {n:"Primordial Pull",d:"Find a Primordial",f:function(){return S.found.indexOf(12)>-1}},
-{n:"Ascended",d:"Evolve 5 times",f:function(){return S.evo>=5}}];
+{n:"Ascended",d:"Evolve 5 times",f:function(){return S.evo>=5}},
+{n:"Level 10",d:"Reach player level 10",f:function(){return lvl()>=10}},
+{n:"Level 25",d:"Reach player level 25",f:function(){return lvl()>=25}},
+{n:"Relic Hunter",d:"Own 5 relics",f:function(){return relTot()>=5}},
+{n:"Relic Master",d:"Own 25 relics",f:function(){return relTot()>=25}},
+{n:"Millionaire",d:"Score 1,000,000 in one roll",f:function(){return S.best>=1e6}},
+{n:"Tycoon",d:"Hold 1 quadrillion DNA",f:function(){return S.dna>=1e15}},
+{n:"Secret Finders",d:"Unlock the Kea & Greig chromosome",f:function(){return !!S.kg}}];
 function ach(){S.ach=S.ach||[];var nw=[];ACH.forEach(function(a){if(S.ach.indexOf(a.n)<0&&a.f()){S.ach.push(a.n);nw.push(a.n)}});
 if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+" (+2% luck each)","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
 $("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days · each achievement adds +2% permanent luck";
 $("ach").innerHTML=ACH.map(function(a){var on=S.ach.indexOf(a.n)>-1;return '<div class="'+(on?"on":"")+'">'+(on?"✅ ":"🔒 ")+esc(a.n)+'<small>'+esc(a.d)+'</small></div>'}).join("")}
 function dkey(t){var d=new Date(t);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
-function daily(){var k=dkey(Date.now());if(S.day===k)return;S.streak=S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1;S.day=k;dex();save()}
+function daily(){var k=dkey(Date.now());if(S.day===k)return;S.streak=S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1;S.day=k;var gift=Math.round(Math.max(150,(S.lifetimeDNA||0)*.03)*Math.min(S.streak,7));S.dna+=gift;S.lifetimeDNA=(S.lifetimeDNA||0)+gift;stats();ups();dex();save();setTimeout(function(){say("🎁 Daily gift: +"+short(gift)+" DNA ("+S.streak+"-day streak)","#2fd37b");snd(784,.2,"triangle",.1)},900)}
 var started=false;
 function startScreen(){
 var o=$("start"),ready=S.day!==dkey(Date.now()),streak=ready?(S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1):(S.streak||0),hook,nx=-1;
@@ -564,6 +564,7 @@ for(var i=0;i<TIERS.length;i++)if(S.found.indexOf(i)<0){nx=i;break}
 if(ready&&streak>1)hook="🔥 Day "+streak+" streak! Keep it going.";
 
 else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/80)+" is building. A Mythic is overdue…";
+else if(!S.rolls)hook="New here? Open a case, collect DNA, buy upgrades and chase the rarest chromosome!";
 else hook=nx<0?"You’ve found every tier. Chase mutations and cards!":"Next tier to discover: ??? · "+oddsText(TIERS[nx].o);
 o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="by">Made by Jace Glover</div>'}
 function play(){if(started)return;started=true;var o=$("start");o.classList.add("out");setTimeout(function(){o.style.display="none"},550);snd(523,.15,"triangle",.1);snd(784,.25,"triangle",.1,.1);daily()}
@@ -578,9 +579,9 @@ var st=$("strip"),vw=$("reel").clientWidth,W=44+Math.floor(Math.random()*8),h=""
 var nmI=(r.k<=12&&Math.random()<.4)?W+(Math.random()<.5?-1:1):-1,nmT=Math.min(14,r.k+2+Math.floor(Math.random()*3));for(var i=0;i<W+8;i++){var t=i===W?r.k:i===nmI?nmT:Math.min(TIERS.length-1,Math.floor(Math.pow(Math.random(),2.4)*lim)),n=TIERS[t].n;if(i===W&&r.md>=0)n=MODS[r.md].n+" "+n;h+=itm(t,n)}
 st.innerHTML=h;
 var end=6+W*94+44-vw/2+(Math.random()*2-1)*38,t0=performance.now(),last=-1,prev=null,reel=$("reel");
-(function f(){var p=Math.min(1,(performance.now()-t0)/dur),x=end*(1-Math.pow(1-p,4));st.style.transform="translateX("+(-x)+"px)";var ix=Math.floor((x+vw/2-6)/94);if(ix!==last){last=ix;tickSound();var item=st.children[ix],match=item&&item.className.match(/\bt(\d+)\b/);if(item&&match){var colour=TIERS[+match[1]].c;reel.style.setProperty("--pass-color",colour);reel.classList.remove("pass");void reel.offsetWidth;reel.classList.add("pass");if(prev)prev.classList.remove("passing");item.classList.add("passing");prev=item}}if(p<1)requestAnimationFrame(f);else{if(prev)prev.classList.remove("passing");reel.classList.remove("pass");reel.style.setProperty("--pass-color",TIERS[r.k].c);st.children[W].classList.add("win");if(nmI>-1)setTimeout(function(){say("😱 SO CLOSE! You nearly landed "+TIERS[nmT].n+"!","#ffd23f")},900);done()}})();
+(function f(){var p=Math.min(1,(performance.now()-t0)/dur),x=end*(1-Math.pow(1-p,4));st.style.transform="translateX("+(-x)+"px)";var ix=Math.floor((x+vw/2-6)/94);if(ix!==last){last=ix;tickSound();var item=st.children[ix],match=item&&item.className.match(/\bt(\d+)\b/);if(item&&match){var colour=TIERS[+match[1]].c;reel.style.setProperty("--pass-color",colour);document.documentElement.style.setProperty("--c",colour);reel.classList.remove("pass");void reel.offsetWidth;reel.classList.add("pass");if(prev)prev.classList.remove("passing");item.classList.add("passing");prev=item}}if(p<1)requestAnimationFrame(f);else{if(prev)prev.classList.remove("passing");reel.classList.remove("pass");reel.style.setProperty("--pass-color",TIERS[r.k].c);st.children[W].classList.add("win");if(nmI>-1)setTimeout(function(){say("😱 SO CLOSE! You nearly landed "+TIERS[nmT].n+"!","#ffd23f")},900);done()}})();
 }
-function mdex(){$("mdex").innerHTML=MODS.map(function(m,i){var g=S.mut[i];return '<div class="'+(g?"got":"")+'" style="--k:'+m.c+'">'+(g?m.n+" ×"+fmt(m.m)+" · ×"+fmt(g):"???")+'<small>Mutation · '+oddsText(m.o)+'</small></div>'}).join("")}
+function mdex(){$("mdex").innerHTML=MODS.map(function(m,i){var g=S.mut[i];return '<div class="'+(g?"got":"")+'" style="--k:'+m.c+'">'+(g?m.n+" ×"+fmt(m.m)+" · ×"+fmt(g):"???")+'<small>Mutation · '+oddsText(m.o)+'</small></div>'}).join("")+'<div class="'+(S.kg?"got":"")+'" style="--k:#ff7a1a">'+(S.kg?"🦜 Kea & Greig · unlocked":"???")+'<small>Special chromosome · found a secret way</small></div>'}
 function evUI(){var e=$("evb");if(!ev){e.className="evb";return}e.textContent=ev.n+" · "+[ev.l&&"Luck ×"+ev.l,ev.y&&"DNA ×"+ev.y,ev.cd&&"Cooldown ×"+ev.cd].filter(Boolean).join(", ")+" · "+Math.max(0,Math.ceil((evEnd-Date.now())/1000))+"s";e.className="evb on"}
 setInterval(function(){var n=Date.now(),ch=false;if(ev&&n>=evEnd){ev=null;ch=true}if(!ev&&Math.random()<1/120){ev=EV[Math.floor(Math.random()*EV.length)];evEnd=n+(30+Math.random()*30)*1000;say(ev.n+" has begun!","#f0a020");snd(660,.2,"triangle",.1);snd(880,.3,"triangle",.1,.15);ch=true}if(ch){stats();ups()}evUI()},1000);
 var lbDB=null,uid=null,nick="",pushT;
@@ -598,8 +599,35 @@ var t=setTimeout(function(){lbStatus("Can’t reach the leaderboard yet…")},10
 db.collection("scores").orderBy("best","desc").limit(10).onSnapshot(function(s){clearTimeout(t);renderLB(s.docs);lbStatus(s.empty?"No scores yet. Be the first!":"Live · top 10")},function(){clearTimeout(t);lbStatus("Leaderboard unavailable.")});
 push();pushOwn();ownSub(db)
 }catch(e){lbStatus("Leaderboard unavailable here.")}})();
-draw(TIERS[0]);stats();dex();hist();ups();progression();evUI();idle();startScreen();
-window.addEventListener("blur",function(){$("stage").classList.remove("opening")});
+function qEnsure(){var k=dkey(Date.now());if(S.q&&S.q.d===k)return;var T=[["open","Open cases",[25,50,100]],["rare","Pull Rare or better",[5,10,20]],["epic","Pull Epic or better",[1,2,3]],["mut","Find mutated chromosomes",[1,2]]];T.sort(function(){return Math.random()-.5});S.q={d:k,all:0,m:T.slice(0,3).map(function(x){return {t:x[0],n:x[1],g:x[2][Math.floor(Math.random()*x[2].length)],p:0,done:0}})}}
+function giveRelic(){var ri=Math.floor(Math.random()*RELICS.length);S.rel=S.rel||{};if((S.rel[ri]||0)<30)S.rel[ri]=(S.rel[ri]||0)+1;setTimeout(function(){say("🔮 Relic reward: "+RELICS[ri].e+" "+RELICS[ri].n,"#c58bff");snd(1047,.3,"triangle",.1)},1800)}
+function qProg(r){qEnsure();S.q.m.forEach(function(m){if(m.done)return;var hit=m.t==="open"||(m.t==="rare"&&r.k>=2)||(m.t==="epic"&&r.k>=3)||(m.t==="mut"&&r.md>=0);if(!hit)return;m.p++;if(m.p>=m.g){m.done=1;var rw=Math.round(Math.max(300,(S.lifetimeDNA||0)*.02));S.dna+=rw;S.lifetimeDNA=(S.lifetimeDNA||0)+rw;setTimeout(function(){say("📋 Mission done: "+m.n+" · +"+short(rw)+" DNA","#2fd37b");snd(784,.2,"triangle",.1)},1200)}});if(!S.q.all&&S.q.m.every(function(m){return m.done})){S.q.all=1;giveRelic()}}
+function qUI(){qEnsure();var d=S.q.m.filter(function(m){return m.done}).length;$("qcount").textContent="· "+d+"/3";$("qlist").innerHTML=S.q.m.map(function(m){var pct=Math.min(100,m.p/m.g*100);return '<div class="prog-milestone"><b>'+(m.done?"✅ ":"🎯 ")+m.n+' · '+Math.min(m.p,m.g)+'/'+m.g+'</b><div class="prog-track"><i style="width:'+pct+'%"></i></div></div>'}).join("")}
+var SK=[["default","Lab",-1],["neon","Neon",3],["void","Void",5],["sunset","Sunset",8]],skin="default";try{skin=localStorage.getItem("chrskin")||"default"}catch(e){}
+function skinsUI(){var h="";SK.forEach(function(x){var ok=x[2]<0||S.found.indexOf(x[2])>-1;if(x[0]===skin&&!ok)skin="default";h+='<button class="reset'+(x[0]===skin?" on":"")+'" data-s="'+x[0]+'"'+(ok?"":" disabled")+'>'+(ok?x[1]:"🔒 "+x[1]+" (find "+TIERS[x[2]].n+")")+'</button>'});$("skins").innerHTML="🎨 Theme: "+h;document.documentElement.dataset.skin=skin==="default"?"":skin}
+$("skins").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;skin=b.dataset.s;try{localStorage.setItem("chrskin",skin)}catch(e2){}skinsUI();snd(660,.1,"triangle",.08)});
+var MU=null;
+function musicToggle(){if(MU){MU.forEach(function(n){try{n.o.stop();n.l.stop()}catch(e){}});MU=null;$("mus").textContent="Music: off";return}
+try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var t=AC.currentTime;MU=[110,164.81,220,277.18,329.63].map(function(f,i){var o=AC.createOscillator(),g=AC.createGain(),l=AC.createOscillator(),lg=AC.createGain();o.type=i%2?"sine":"triangle";o.frequency.value=f;l.frequency.value=.05+i*.03;lg.gain.value=.012;l.connect(lg);lg.connect(g.gain);g.gain.setValueAtTime(.014,t);o.connect(g);g.connect(AC.destination);o.start();l.start();return {o:o,l:l}});$("mus").textContent="Music: on"}catch(e){}}
+$("mus").addEventListener("click",function(){musicToggle();this.blur()});
+draw(TIERS[0]);stats();dex();hist();ups();evUI();idle();startScreen();
+var KGW="keagreig",kgBuf="";
+document.addEventListener("keydown",function(e){if(!started||S.kg||e.repeat||e.ctrlKey||e.metaKey||e.altKey)return;var t=e.target&&e.target.tagName;if(t==="INPUT"||t==="SELECT")return;if(!e.key||e.key.length!==1)return;kgBuf=(kgBuf+e.key.toLowerCase()).slice(-KGW.length);if(kgBuf.slice(-3)==="kea")e.stopPropagation();if(kgBuf===KGW)unlockKG()},true);
+function unlockKG(){if(S.kg)return;S.kg=1;S.kgd=new Date().toLocaleDateString();save();stats();ups();dex();kgShow()}
+function kgShow(){var o=document.createElement("div");o.className="kgo";o.innerHTML='<div class="kgc"><div class="kgb">🦜</div><h2>KEA &amp; GREIG</h2><div class="kgs">Secret chromosome unlocked</div><div class="kgn">Permanent ×1.25 luck and ×1.25 DNA</div><button class="reset">Tap to close</button></div>';o.onclick=function(){o.remove()};document.body.appendChild(o);setTimeout(function(){o.remove()},9000);[1,1.25,1.5,2,2.5,3].forEach(function(m,i){snd(523*m,.5,"triangle",.1,i*.14)});sweepSound(110,1760,1,"sine",.06);noiseHit(.5,.1,.05,2500);boom(160,"#7fa02b");setTimeout(function(){boom(160,"#ff7a1a")},350);document.documentElement.style.setProperty("--c","#ff7a1a")}
+(function(){var key="chrmin",st={};try{st=JSON.parse(localStorage.getItem(key)||"{}")}catch(e){}
+var secs=document.querySelectorAll("section.lb");
+function save2(){try{localStorage.setItem(key,JSON.stringify(st))}catch(e){}}
+function nm(h){return h.textContent.replace(/[^A-Za-z ]/g,"").trim()}
+var b=document.createElement("button");b.id="colall";b.className="reset";
+function lbl(){b.textContent=document.querySelector("section.lb:not(.min)")?"Collapse all panels":"Expand all panels"}
+secs.forEach(function(sc,i){var h=sc.querySelector("h2");if(!h)return;var id=nm(h)||("s"+i);h.tabIndex=0;h.setAttribute("role","button");
+function set(m){sc.classList.toggle("min",m);h.setAttribute("aria-expanded",String(!m))}
+set(id in st?!!st[id]:id==="Verify a Card");
+function tog(){var m=!sc.classList.contains("min");set(m);st[id]=m?1:0;save2();lbl()}
+h.addEventListener("click",tog);h.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();e.stopPropagation();tog()}})});
+secs[0].parentNode.insertBefore(b,secs[0]);
+b.addEventListener("click",function(){var any=!!document.querySelector("section.lb:not(.min)");secs.forEach(function(sc){var h=sc.querySelector("h2");sc.classList.toggle("min",any);h.setAttribute("aria-expanded",String(!any));st[nm(h)]=any?1:0});save2();lbl()});lbl()})();
 </script>
 </body>
 </html>
