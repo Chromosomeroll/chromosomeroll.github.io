@@ -109,12 +109,12 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 .t9:after{inset:-40%;opacity:.6;background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(255,225,77,.8),transparent 30%,rgba(255,140,0,.7),transparent 60%,rgba(255,225,77,.8),transparent);-webkit-mask:radial-gradient(circle at 50% 50%,transparent 11%,#000 13%,#000 36%,transparent 60%);mask:radial-gradient(circle at 50% 50%,transparent 11%,#000 13%,#000 36%,transparent 60%);animation:rz 5s linear infinite}@keyframes rz{to{transform:rotate(360deg)}}
 .t10{background:linear-gradient(0deg,#6a1200,#1a0500 70%);animation:omg 1.6s ease-in-out infinite}@keyframes omg{50%{box-shadow:0 0 38px 3px #ff7a2e}}
 .t10:after{mix-blend-mode:screen;background:radial-gradient(60px 90px at 20% 110%,rgba(255,160,40,.8),transparent),radial-gradient(70px 110px at 55% 115%,rgba(255,90,20,.9),transparent),radial-gradient(60px 90px at 90% 110%,rgba(255,200,60,.8),transparent);animation:flame .9s ease-in-out infinite alternate}@keyframes flame{from{transform:translateY(6px) scaleY(.9)}to{transform:translateY(-8px) scaleY(1.15)}}
-.t11{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}@keyframes gl{50%{box-shadow:0 0 30px 4px #fff,0 0 60px 10px rgba(255,0,255,.5);translate:0 -3px}}
-.t11:after{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent),radial-gradient(2px 2px at 50% 80%,#fff,transparent);background-size:300% 100%,auto,auto,auto;animation:sheen 3s linear infinite}@keyframes sheen{from{background-position:150% 0,0 0,0 0,0 0}to{background-position:-50% 0,0 0,0 0,0 0}}
-.t11 i{animation:hue 4s linear infinite}@keyframes hue{from{filter:hue-rotate(0deg) drop-shadow(0 0 8px #fff)}to{filter:hue-rotate(360deg) drop-shadow(0 0 8px #fff)}}
+.t15{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}@keyframes gl{50%{box-shadow:0 0 30px 4px #fff,0 0 60px 10px rgba(255,0,255,.5);translate:0 -3px}}
+.t15:after{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent),radial-gradient(2px 2px at 50% 80%,#fff,transparent);background-size:300% 100%,auto,auto,auto;animation:sheen 3s linear infinite}@keyframes sheen{from{background-position:150% 0,0 0,0 0,0 0}to{background-position:-50% 0,0 0,0 0,0 0}}
+.t15 i{animation:hue 4s linear infinite}@keyframes hue{from{filter:hue-rotate(0deg) drop-shadow(0 0 8px #fff)}to{filter:hue-rotate(360deg) drop-shadow(0 0 8px #fff)}}
 :is(.it,.dex div.got){position:relative;isolation:isolate;overflow:hidden}
-:is(.it,.dex div.got):is(.t6,.t7,.t8,.t9,.t10,.t11):before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit}
-:is(.it,.dex div.got):is(.t8,.t9,.t10,.t11){color:#fff}.dex div.got:is(.t8,.t9,.t10,.t11) small{color:rgba(255,255,255,.75)}
+:is(.it,.dex div.got):is(.t6,.t7,.t8,.t9,.t10,.t15):before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit}
+:is(.it,.dex div.got):is(.t8,.t9,.t10,.t15){color:#fff}.dex div.got:is(.t8,.t9,.t10,.t15) small{color:rgba(255,255,255,.75)}
 :is(.it,.dex div.got).t6{animation:glitch 2.6s steps(1) infinite}
 :is(.it,.dex div.got).t7{animation:gp 2.4s ease-in-out infinite}
 :is(.it,.dex div.got).t7:before{background:repeating-linear-gradient(60deg,transparent 0 10px,rgba(255,255,255,.1) 10px 12px);background-size:60px 60px;animation:slide 3s linear infinite}
@@ -124,9 +124,9 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 :is(.it,.dex div.got).t9:before{inset:-60%;opacity:.6;background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(255,225,77,.8),transparent 30%,rgba(255,140,0,.7),transparent 60%,rgba(255,225,77,.8),transparent);-webkit-mask:radial-gradient(circle at 50% 50%,transparent 8%,#000 10%,#000 30%,transparent 55%);mask:radial-gradient(circle at 50% 50%,transparent 8%,#000 10%,#000 30%,transparent 55%);animation:rz 5s linear infinite}
 :is(.it,.dex div.got).t10{background:linear-gradient(0deg,#6a1200,#1a0500 70%);animation:omg 1.6s ease-in-out infinite}
 :is(.it,.dex div.got).t10:before{mix-blend-mode:screen;background:radial-gradient(40px 60px at 20% 110%,rgba(255,160,40,.8),transparent),radial-gradient(45px 70px at 55% 115%,rgba(255,90,20,.9),transparent),radial-gradient(40px 60px at 90% 110%,rgba(255,200,60,.8),transparent);animation:flame .9s ease-in-out infinite alternate}
-:is(.it,.dex div.got).t11{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}
-:is(.it,.dex div.got).t11:before{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent);background-size:300% 100%,auto,auto;animation:sheen 3s linear infinite}
-.it.t11 span{animation:hue 4s linear infinite}
+:is(.it,.dex div.got).t15{border-color:transparent;background:linear-gradient(145deg,#1a1a2e,#0a0a14) padding-box,conic-gradient(from var(--a),#f0f,#0ff,#ff0,#f0f) border-box;animation:rot 4s linear infinite,gl 3s ease-in-out infinite}
+:is(.it,.dex div.got).t15:before{background:linear-gradient(115deg,transparent 20%,rgba(255,0,255,.25) 35%,rgba(0,255,255,.25) 50%,rgba(255,255,0,.25) 65%,transparent 80%),radial-gradient(2px 2px at 20% 25%,#fff,transparent),radial-gradient(2px 2px at 80% 40%,#fff,transparent);background-size:300% 100%,auto,auto;animation:sheen 3s linear infinite}
+.it.t15 span{animation:hue 4s linear infinite}
 .cd .bst{display:block;font-size:.72rem;font-weight:800;margin:3px 0;color:#ffe9a8}.cd .eqb{margin-right:4px}.cd.eqd{outline:3px solid #ffd23f;box-shadow:0 0 22px #ffd23f}
 .ach{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.ach div{font-size:.78rem;border:1px solid var(--bd);border-radius:8px;padding:6px 8px;opacity:.5}.ach div.on{opacity:1;border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--card))}.ach small{display:block;color:var(--mut);font-size:.7rem}
 #start{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;overflow:auto;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,#7a5cff 38%,var(--bg)),var(--bg) 70%);transition:opacity .5s,transform .5s}
@@ -143,12 +143,13 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 #play{width:auto;margin:6px 0;padding:18px 56px;font-size:1.3rem;background:linear-gradient(135deg,#ff3df0,#7a5cff);color:#fff;animation:pulsebtn 1.6s ease-in-out infinite}
 @keyframes pulsebtn{50%{transform:scale(1.06);box-shadow:0 0 38px #ff3df0}}
 #start .by{color:var(--mut);font-size:.85rem;letter-spacing:.08em}
+.cd:is(.t11,.t12,.t13,.t14),.dex div.got:is(.t11,.t12,.t13,.t14){animation:gp 2.4s ease-in-out infinite}
 </style>
 </head>
 <body>
 <main>
 <h1>🧬 Chromosome Case</h1><div class="hint" style="margin-top:-2px">Made by Jace Glover</div>
-<p class="sub">Press SPACE or tap the card to open a case. Land the golden Omega. Mutations, wear and world events shake up every drop.</p>
+<p class="sub">Press SPACE or tap the card to open a case. Chase the legendary Glover. Mutations, wear and world events shake up every drop.</p>
 <div class="evb" id="evb"></div><div class="stats">
 <div class="stat"><b id="best">0</b><span>High score</span></div>
 <div class="stat"><b id="dna">0</b><span>DNA</span></div>
@@ -170,7 +171,7 @@ svg{animation:float 4s ease-in-out infinite}@keyframes float{50%{translate:0 -6p
 <div id="msg"></div>
 <button id="auto" class="reset">Auto-roll: off</button><button id="mute" class="reset">Sound: on</button>
 <canvas id="fx"></canvas><div class="hint" id="cld">Progress is saved in this browser. Open the page signed in to claude.ai to also sync it to your account.</div>
-<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck.</div>
+<div class="hint">Every roll earns DNA equal to its score. Spend it on upgrades. Press A for auto-roll. Watch for random world events! Higher Luck and Yield levels stay locked until you find rarer tiers, luck gains fade after level 15, and every roll without a Mythic builds pity luck until one drops, and each tier or mutation you discover adds permanent luck. Every 50th case is a Bonus Case with ×4 luck, and the Mutation Lab boosts mutation chances.</div>
 <div class="up" id="up"></div>
 <div class="hint" style="margin-top:14px">Odds below are base odds. Luck multiplies your chances, and it never caps out.</div>
 <section class="lb"><h2>🏅 Achievements <span id="acount"></span></h2><div class="st" id="strk"></div><div class="ach" id="ach"></div></section>
@@ -186,19 +187,23 @@ var TIERS=[
 {n:"Common",o:2,lo:1,hi:100,c:"#7a8099"},
 {n:"Uncommon",o:8,lo:100,hi:1e3,c:"#2fb36b"},
 {n:"Rare",o:40,lo:1e3,hi:1e4,c:"#2f7bf0"},
-{n:"Epic",o:400,lo:1e4,hi:1e6,c:"#9b4de8"},
-{n:"Legendary",o:5000,lo:1e6,hi:1e8,c:"#f0a020"},
-{n:"Mythic",o:75000,lo:1e8,hi:1e10,c:"#e8374f"},
-{n:"Mutant",o:1e6,lo:1e10,hi:1e12,c:"#14c8d8"},
-{n:"Genome Prime",o:1.5e7,lo:1e12,hi:1e14,c:"#ff3df0"},
-{n:"Cosmic",o:4e8,lo:1e14,hi:1e17,c:"#6bff7a"},
-{n:"Singularity",o:1e10,lo:1e17,hi:1e20,c:"#ffe14d"},
-{n:"Omega",o:1.5e12,lo:1e20,hi:1e24,c:"#ff7a2e"},
-{n:"Glover",o:1e18,lo:1e24,hi:1e30,c:"#e8f4ff"}
+{n:"Epic",o:600,lo:1e4,hi:1e6,c:"#9b4de8"},
+{n:"Legendary",o:9000,lo:1e6,hi:1e8,c:"#f0a020"},
+{n:"Mythic",o:150000,lo:1e8,hi:1e10,c:"#e8374f"},
+{n:"Mutant",o:2.5e6,lo:1e10,hi:1e12,c:"#14c8d8"},
+{n:"Genome Prime",o:4e7,lo:1e12,hi:1e14,c:"#ff3df0"},
+{n:"Cosmic",o:1.2e9,lo:1e14,hi:1e17,c:"#6bff7a"},
+{n:"Singularity",o:3e10,lo:1e17,hi:1e20,c:"#ffe14d"},
+{n:"Omega",o:5e12,lo:1e20,hi:1e24,c:"#ff7a2e"},
+{n:"Eternal",o:2e13,lo:1e24,hi:1e32,c:"#ff5fa2"},
+{n:"Primordial",o:5e14,lo:1e32,hi:1e45,c:"#b388ff"},
+{n:"Infinity",o:4e16,lo:1e45,hi:1e65,c:"#5ff3ff"},
+{n:"Eden",o:1e19,lo:1e65,hi:1e85,c:"#aaff5f"},
+{n:"Glover",o:1e24,lo:1e85,hi:1e100,c:"#e8f4ff"}
 ];
 var VER=2,S={ver:VER,best:0,rolls:0,rare:-1,found:[]};
 try{var raw=localStorage.getItem("chrroll");if(raw){var p=JSON.parse(raw);if(p&&typeof p.best==="number"&&p.ver===VER)S=p}}catch(e){}
-S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
+S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[];
 function upMig(){if(S.uv!==2){S.luck=0;S.cd=0;S.yld=0;S.evo=0;S.dna=0;S.pm=0;S.uv=2}}upMig();
 function save(){try{localStorage.setItem("chrroll",JSON.stringify(S))}catch(e){}cloudSave()}
 function $(i){return document.getElementById(i)}
@@ -220,20 +225,20 @@ $("chr").innerHTML=b;
 }
 /* upgrades: luck has no cap */
 function evoMul(){return Math.pow(2,S.evo)}
-function lvMul(n){return Math.pow(1.3,Math.min(n,15))*Math.pow(1.1,Math.max(0,n-15))}
-function mileMul(){return (1+.06*S.found.length+.04*Object.keys(S.mut).length)*(1+.03*(S.ach||[]).length)}
-function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/60)*eqLuck()*(hot>0?1.25:1)*(ev&&ev.l||1)}
-function yMul(){return Math.pow(1.25,S.yld)*eqDna()*(ev&&ev.y||1)}
-function cdSec(){return Math.max(0.2,1.5*Math.pow(0.88,S.cd)*(ev&&ev.cd||1))}
+function lvMul(n){return Math.pow(1.25,Math.min(n,15))*Math.pow(1.08,Math.max(0,n-15))}
+function mileMul(){return (1+.04*S.found.length+.03*Object.keys(S.mut).length)*(1+.02*(S.ach||[]).length)}
+function luckMul(){return lvMul(S.luck)*evoMul()*mileMul()*(1+(S.pm||0)/80)*eqLuck()*(hot>0?1.25:1)*(ev&&ev.l||1)}
+function yMul(){return Math.pow(1.2,S.yld)*eqDna()*(ev&&ev.y||1)}
+function cdSec(){return Math.max(0.2,1.5*Math.pow(0.9,S.cd)*(ev&&ev.cd||1))}
 var CMAX=16;
-var ES=function(){return Math.pow(3,S.evo)},COST={l:function(){return 100*Math.pow(2.5,S.luck)*ES()},c:function(){return 200*Math.pow(3,S.cd)*ES()},y:function(){return 200*Math.pow(2.6,S.yld)*ES()}};
-var KEY={l:"luck",c:"cd",y:"yld"};
-function evoNeed(){return 22+8*S.evo}function evoTier(){return Math.min(10,4+S.evo)}function canEvo(){return S.luck>=evoNeed()&&S.rare>=evoTier()}
+var ES=function(){return Math.pow(4,S.evo)},COST={l:function(){return 150*Math.pow(2.8,S.luck)*ES()},c:function(){return 300*Math.pow(3.4,S.cd)*ES()},y:function(){return 300*Math.pow(3,S.yld)*ES()}};
+var KEY={l:"luck",c:"cd",y:"yld",m:"mlab"};COST.m=function(){return 600*Math.pow(3.2,S.mlab||0)*ES()};
+function evoNeed(){return 28+10*S.evo}function evoTier(){return Math.min(14,4+S.evo)}function canEvo(){return S.luck>=evoNeed()&&S.rare>=evoTier()}
 function pick(){
-var r=Math.random()/luckMul(),k=0;
+var bn=(S.rolls+1)%50===0,r=Math.random()/(luckMul()*(bn?4:1)),k=0;if(bn)say("🎰 BONUS CASE! Luck ×4 on this roll","#ffd23f");
 for(var i=TIERS.length-1;i>=0;i--){if(r<1/TIERS[i].o){k=i;break}}
 var t=TIERS[k],s=Math.exp(Math.log(t.lo)+Math.random()*(Math.log(t.hi)-Math.log(t.lo)));
-var md=-1,lm=Math.pow(luckMul(),.3),fl=Math.random(),wi=fl<.07?0:fl<.15?1:fl<.38?2:fl<.45?3:4;for(i=MODS.length-1;i>=0;i--)if(Math.random()<lm/MODS[i].o){md=i;break}
+var md=-1,lm=Math.pow(luckMul(),.3)*Math.pow(1.25,S.mlab||0),fl=Math.random(),wi=fl<.07?0:fl<.15?1:fl<.38?2:fl<.45?3:4;for(i=MODS.length-1;i>=0;i--)if(Math.random()<lm/MODS[i].o){md=i;break}
 return {k:k,s:Math.round(s*(md>=0?MODS[md].m:1)*WM[wi]),md:md,fl:fl,wi:wi};
 }
 function dex(){mdex();cards();ach();
@@ -271,7 +276,7 @@ draw(t);
 var el=$("chr");el.style.filter=r.md>=0?MODS[r.md].f:"";el.classList.remove("pop");void el.getBoundingClientRect();el.classList.add("pop");
 hot=r.k>=3?5:Math.max(0,hot-1);var gain=r.s*yMul()*evoMul();
 $("tier").textContent=(r.md>=0?MODS[r.md].n+" ":"")+t.n;$("odds").textContent=oddsText(t.o)+(r.md>=0?" + "+oddsText(MODS[r.md].o)+" mutation":"")+" · "+WN[r.wi]+" ("+r.fl.toFixed(4)+") · "+quip(r.k);reveal(r.k);if(r.md>=0){say(MODS[r.md].n.toUpperCase()+" MUTATION! ×"+fmt(MODS[r.md].m),MODS[r.md].c);if(r.md>=2)boom(100,MODS[r.md].c)}
-$("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"")+" · pity ×"+xf(1+(S.pm||0)/60)+(hot>0?" · 🔥 hot streak ×1.25 ("+hot+")":"");
+$("score").textContent=sc(r.s);$("gain").textContent="+"+short(gain)+" DNA"+(ev?" · "+ev.n:"")+" · pity ×"+xf(1+(S.pm||0)/80)+(hot>0?" · 🔥 hot streak ×1.25 ("+hot+")":"");
 $("new").classList.toggle("on",nb);
 var st=$("stage");st.classList.remove("flash");if(r.k>=3){void st.getBoundingClientRect();st.classList.add("flash")}
 S.dna+=gain;stats();dex();hist();ups();save();if(nb)push();
@@ -286,9 +291,10 @@ var cost=COST[k](),nd=gate(k),lock=nd>S.rare,can=S.dna>=cost&&!max&&!lock;
 return '<div class="u"><b>'+title+'</b><small>'+desc+'</small><div class="r"><button data-u="'+k+'"'+(can?"":" disabled")+'>'+(max?"MAX":lock?"🔒 Find "+TIERS[nd].n:"Buy · "+short(cost)+" DNA")+'</button>'+(max?"":'<button class="mx" data-u="'+k+'" data-m="1"'+(can?"":" disabled")+'>Max</button>')+'</div></div>';
 }
 h+=card("l","Luck Lv "+S.luck,"Now ×"+xf(luckMul())+" → ×"+xf(luckMul()*lvMul(S.luck+1)/lvMul(S.luck))+" · diminishing");
-h+=card("c","Cooldown Lv "+S.cd,"Now "+cdSec().toFixed(2)+"s"+(S.cd>=CMAX?"":" → "+Math.max(0.2,1.5*Math.pow(0.88,S.cd+1)).toFixed(2)+"s"),S.cd,S.cd>=CMAX);
-h+=card("y","DNA Yield Lv "+S.yld,"Now ×"+xf(yMul())+" → ×"+xf(yMul()*1.25));
-h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Needs Luck Lv '+evoNeed()+' and a '+TIERS[evoTier()].n+' found. Costs triple per stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve")+'</button></div></div>';
+h+=card("c","Cooldown Lv "+S.cd,"Now "+cdSec().toFixed(2)+"s"+(S.cd>=CMAX?"":" → "+Math.max(0.2,1.5*Math.pow(0.9,S.cd+1)).toFixed(2)+"s"),S.cd,S.cd>=CMAX);
+h+=card("y","DNA Yield Lv "+S.yld,"Now ×"+xf(yMul())+" → ×"+xf(yMul()*1.2));
+h+=card("m","Mutation Lab Lv "+(S.mlab||0),"Mutation chance ×"+xf(Math.pow(1.25,S.mlab||0))+" → ×"+xf(Math.pow(1.25,(S.mlab||0)+1)));
+h+='<div class="u wide"><b>🧪 Evolve · Stage '+S.evo+'</b><small>Reset DNA and upgrades for a permanent ×2 luck and ×2 DNA. Needs Luck Lv '+evoNeed()+' and a '+TIERS[evoTier()].n+' found. Costs quadruple per stage.</small><div class="r"><button data-u="e"'+(canEvo()?"":" disabled")+'>'+(evArm?"Click again to confirm":"Evolve")+'</button></div></div>';
 $("up").innerHTML=h;
 }
 function buy(k,max){
@@ -299,7 +305,7 @@ if(n){stats();ups();save();snd(660,.12,"triangle",.07)}
 function evolve(){
 if(!canEvo())return;
 if(!evArm){evArm=true;ups();setTimeout(function(){evArm=false;ups()},3000);return}
-evArm=false;S.evo++;S.dna=0;S.luck=0;S.cd=0;S.yld=0;
+evArm=false;S.evo++;S.dna=0;S.luck=0;S.cd=0;S.yld=0;S.mlab=0;
 say("EVOLVED! Permanent bonus ×"+fmt(evoMul()),"#9b4de8");snd(523,.3,"triangle",.1);snd(784,.4,"triangle",.1,.15);boom(120,"#9b4de8");
 stats();ups();save();
 }
@@ -313,8 +319,8 @@ if(left>0){b.classList.add("cd");$("gl").textContent="Cooldown "+(left/1000).toF
 else{b.classList.remove("cd");$("gl").textContent="Open case (Space)";$("bar").style.width="0"}
 }
 var SCOLD=["Easy there! One roll at a time.","Spamming won’t help, you know.","I SAW THAT. Stop mashing!","Your keyboard is begging you to stop.","Chromosomes need personal space!"];
-var QUIPS=[["Basic. Boring. Beautiful.","Meh.","A chromosome. Truly."],["Ooh, a little shiny.","Not bad!","Mildly interesting."],["Now we’re talking.","Ooh, rare!","Nice pull."],["That’s a good one!","Epic vibes.","Scientists are impressed."],["Go buy a lottery ticket.","Whoa!!","Professor, come look at this."],["Is this even legal?","The lab is shaking!","Nobody will believe you."],["Your DNA is glitching!","Mutant energy.","Alert the geneticists."],["IMPOSSIBLE. You are the chosen one.","Screenshot it NOW.","The universe blinked."],["Stars are taking notes.","Cosmic jackpot.","Astronomers are calling."],["Reality just buffered.","Time bent a little.","A tiny black hole winked at you."],["THE FINAL FORM.","Omega. There is nothing beyond.","You broke the game. Congratulations."],["GLOVER. One in a quintillion.","Frame this. Print it. Tell everyone.","Statistically, this shouldn’t exist."]];
-var HYPE=["","","","","LEGENDARY!","MYTHIC PULL!!","MUTANT ALERT!!!","🎉 GENOME PRIME!!! 🎉","🌌 COSMIC!!! 🌌","⚫ SINGULARITY!!! ⚫","👑 OMEGA!!! 👑","🌈 GLOVER!!! 1 IN A QUINTILLION 🌈"];
+var QUIPS=[["Basic. Boring. Beautiful.","Meh.","A chromosome. Truly."],["Ooh, a little shiny.","Not bad!","Mildly interesting."],["Now we’re talking.","Ooh, rare!","Nice pull."],["That’s a good one!","Epic vibes.","Scientists are impressed."],["Go buy a lottery ticket.","Whoa!!","Professor, come look at this."],["Is this even legal?","The lab is shaking!","Nobody will believe you."],["Your DNA is glitching!","Mutant energy.","Alert the geneticists."],["IMPOSSIBLE. You are the chosen one.","Screenshot it NOW.","The universe blinked."],["Stars are taking notes.","Cosmic jackpot.","Astronomers are calling."],["Reality just buffered.","Time bent a little.","A tiny black hole winked at you."],["THE FINAL FORM. Or is it?","Omega. Surely nothing lies beyond.","The lab has run out of instruments."],["Time itself has stopped counting.","Eternal. Write it in the stars.","Even Omega is looking up at you."],["The first chromosome. Before everything.","Primordial power.","This is where it all began."],["Infinity looked back at you.","Numbers are giving up.","The calculator just sighed."],["Paradise found. Eden.","The last garden. The last gene.","One step from the throne."],["GLOVER. One in a septillion.","Frame this. Print it. Tell everyone.","Statistically, this shouldn’t exist."]];
+var HYPE=["","","","","LEGENDARY!","MYTHIC PULL!!","MUTANT ALERT!!!","🎉 GENOME PRIME!!! 🎉","🌌 COSMIC!!! 🌌","⚫ SINGULARITY!!! ⚫","👑 OMEGA!!! 👑","💠 ETERNAL!!! 💠","🌀 PRIMORDIAL!!! 🌀","♾️ INFINITY!!! ♾️","🌿 EDEN!!! 🌿","🌈 GLOVER!!! 1 IN A SEPTILLION 🌈"];
 function quip(k){var a=QUIPS[k];return a[Math.floor(Math.random()*a.length)]}
 function say(t,c){var m=$("msg");m.textContent=t;m.style.color=c||"#e8374f";m.classList.add("on");clearTimeout(msgT);msgT=setTimeout(function(){m.classList.remove("on")},2600)}
 function snd(f,d,ty,v,dl){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(dl||0);o.type=ty||"sine";o.frequency.value=f;g.gain.setValueAtTime(v||.08,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d)}catch(e){}}
@@ -333,12 +339,12 @@ if(n-lastS<500)return;
 lastS=n;say(SCOLD[Math.min(SCOLD.length-1,Math.floor((c-3)/2))]);snd(110,.2,"sawtooth",.07);shake($("go"));
 }
 function reveal(k){
-var b=[392,440,523,587,659,784,880,1047,1175,1319,1568,1760],c=TIERS[k].c;
+var b=[392,440,523,587,659,784,880,1047,1175,1319,1568,1661,1760,1865,1976,2093],c=TIERS[k].c;
 snd(b[k],.25,"triangle",.1);
 if(k>=2)snd(b[k]*1.25,.25,"triangle",.09,.12);
 if(k>=4)snd(b[k]*1.5,.4,"triangle",.09,.24);
-if(k>=6)snd(b[k]*2,.6,"sine",.1,.4);if(k>=11)[1,1.25,1.5,2,2.5,3].forEach(function(m,i){snd(b[k]*m,.5,"triangle",.1,.5+i*.15)});
-if(k>=3)boom(k>=11?700:k>=9?420:k>=7?320:k>=5?160:70,c);if(k>=11)glover();
+if(k>=6)snd(b[k]*2,.6,"sine",.1,.4);if(k>=15)[1,1.25,1.5,2,2.5,3].forEach(function(m,i){snd(b[k]*m,.5,"triangle",.1,.5+i*.15)});
+if(k>=3)boom(k>=15?700:k>=11?500:k>=9?420:k>=7?320:k>=5?160:70,c);if(k>=15)glover();
 if(k>=5)shake(document.querySelector("main"));
 if(HYPE[k])say(HYPE[k],c);
 }
@@ -365,7 +371,7 @@ $("stage").addEventListener("click",function(){press(false)});
 $("reset").addEventListener("click",function(){
 if(!this.dataset.arm){this.dataset.arm=1;this.textContent="Click again to erase everything";var b=this;setTimeout(function(){delete b.dataset.arm;b.textContent="Reset progress"},3000);return}
 delete this.dataset.arm;this.textContent="Reset progress";
-if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={ver:VER,best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
+if(lbDB&&uid)lbDB.doc("owners/"+uid).delete().catch(function(){});S={ver:VER,best:0,rolls:0,rare:-1,found:[],dna:0,luck:0,cd:0,yld:0,mlab:0,evo:0,cnt:{},mut:{},cards:[],eq:[],hist:[]};save();stats();dex();hist();ups();
 $("tier").textContent="Ready";$("odds").textContent="Press space to begin";$("score").textContent="0";$("gain").textContent="";$("new").classList.remove("on");
 document.documentElement.style.setProperty("--c","#7a8099");draw(TIERS[0]);idle();
 });
@@ -388,7 +394,7 @@ g.globalAlpha=.07;g.fillStyle="#fff";for(var i=-8;i<16;i++){g.beginPath();g.move
 if(c.k===8){g.fillStyle="#fff";for(var q=0;q<70;q++){g.globalAlpha=.3+Math.random()*.7;g.fillRect(Math.random()*W,Math.random()*H,2,2)}g.globalAlpha=1}
 if(c.k===9){var bh=g.createRadialGradient(W/2,300,20,W/2,300,200);bh.addColorStop(0,"#000");bh.addColorStop(.45,"#000");bh.addColorStop(.55,"#ffb300");bh.addColorStop(1,"rgba(0,0,0,0)");g.fillStyle=bh;g.fillRect(0,100,W,400)}
 if(c.k===10){var fl=g.createLinearGradient(0,H,0,H*.45);fl.addColorStop(0,"rgba(255,120,20,.85)");fl.addColorStop(1,"rgba(255,60,0,0)");g.fillStyle=fl;g.fillRect(0,H*.45,W,H*.55)}
-var sg=t.c;if(c.k>=11){sg=g.createLinearGradient(0,0,W,H);["#f0f","#0ff","#ff0","#f0f"].forEach(function(col,i2){sg.addColorStop(i2/3,col)})}
+var sg=t.c;if(c.k>=15){sg=g.createLinearGradient(0,0,W,H);["#f0f","#0ff","#ff0","#f0f"].forEach(function(col,i2){sg.addColorStop(i2/3,col)})}
 g.strokeStyle=sg;g.lineWidth=10;g.strokeRect(14,14,W-28,H-28);g.lineWidth=2;g.strokeStyle="rgba(255,255,255,.5)";g.strokeRect(26,26,W-52,H-52);
 g.textAlign="center";g.fillStyle="#fff";var F="Outfit,system-ui,sans-serif";
 g.font="700 26px "+F;g.fillText("CHROMOSOME CASE",W/2,80);
@@ -416,10 +422,10 @@ if(!x){out.textContent="❌ No genuine card with that code. It may be fake or co
 var ps=usr?await usr.profiles([good.id]):{},nm=(ps[good.id]&&ps[good.id].name)||"a verified player",t=TIERS[x.k];
 out.textContent="✅ Authentic · "+(x.md>=0?MODS[x.md].n+" ":"")+t.n+" · score "+sc(+x.s)+" · "+WN[x.wi]+" ("+(+x.fl).toFixed(4)+") · minted by "+nm+(good.data().nick?" (plays as "+good.data().nick+")":"")+" on "+x.d
 }catch(e){out.textContent="Couldn’t verify right now."}});
-function gate(k){var L=S[KEY[k]];if(k==="l")return L<10?-1:Math.min(10,1+Math.floor((L-10)/6));if(k==="y")return L<8?-1:Math.min(10,1+Math.floor((L-8)/5));return -1}
+function gate(k){var L=S[KEY[k]];if(k==="l")return L<12?-1:Math.min(14,1+Math.floor((L-12)/7));if(k==="y")return L<10?-1:Math.min(14,1+Math.floor((L-10)/6));return -1}
 var cloudT=0,cloudReady=false;
 function cloudMsg(t){$("cld").textContent=t}
-function norm(){upMig();S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
+function norm(){upMig();S.dna=S.dna||0;S.luck=S.luck||0;S.cd=S.cd||0;S.yld=S.yld||0;S.mlab=S.mlab||0;S.evo=S.evo||0;S.cnt=S.cnt||{};S.mut=S.mut||{};S.cards=S.cards||[];S.hist=S.hist||[];S.found=S.found||[];S.eq=S.eq||[]}
 function cloudSave(){if(!lbDB||!uid||!cloudReady||cloudT)return;cloudT=setTimeout(function(){cloudT=0;cloudNow()},4000)}
 function cloudNow(){if(!lbDB||!uid)return;lbDB.doc("data/users/"+uid+"/progress").set({S:S,nick:nick||"",t:Date.now()}).then(function(){cloudMsg("☁️ Progress saved to your account · "+new Date().toLocaleTimeString())}).catch(function(){cloudMsg("Cloud save needs Contributor access. Progress is saved in this browser.")})}
 async function loadCloud(){
@@ -428,8 +434,8 @@ if(cr>S.rolls){S=d.S;norm();if(d.nick&&!nick){nick=String(d.nick).slice(0,14);$(
 else if(S.rolls>cr)cloudNow();else cloudMsg("☁️ Progress synced to your account")}
 catch(e){cloudMsg("Cloud save unavailable. Progress is saved in this browser.")}
 cloudReady=true}
-function glover(){var h=0,n=0,iv=setInterval(function(){if(busy||++n>80){clearInterval(iv);if(!busy)document.documentElement.style.setProperty("--c",TIERS[11].c);return}h=(h+12)%360;document.documentElement.style.setProperty("--c","hsl("+h+" 100% 60%)")},100)}
-var BL=[1.05,1.05,1.1,1.2,1.4,1.8,2.5,4,6,10,20,50],BD=[1.05,1.05,1.1,1.15,1.4,1.8,2.5,3,4,6,10,25];
+function glover(){var h=0,n=0,iv=setInterval(function(){if(busy||++n>80){clearInterval(iv);if(!busy)document.documentElement.style.setProperty("--c",TIERS[15].c);return}h=(h+12)%360;document.documentElement.style.setProperty("--c","hsl("+h+" 100% 60%)")},100)}
+var BL=[1.05,1.05,1.1,1.2,1.4,1.8,2.5,4,6,10,20,28,36,45,55,80],BD=[1.05,1.05,1.1,1.15,1.4,1.8,2.5,3,4,6,10,14,18,22,28,40];
 function bq(c){return (1.2-.4*(+c.fl||0))*(1+.25*(c.md+1))}
 function cLuck(c){return 1+((BL[c.k]||1)-1)*bq(c)}
 function cDna(c){return 1+((BD[c.k]||1)-1)*bq(c)}
@@ -448,16 +454,24 @@ var hot=0,ACH=[
 {n:"Mutant Hunter",d:"Find a Mutant",f:function(){return S.found.indexOf(6)>-1}},
 {n:"Cosmic Explorer",d:"Find a Cosmic",f:function(){return S.found.indexOf(8)>-1}},
 {n:"Omega Reached",d:"Find an Omega",f:function(){return S.found.indexOf(10)>-1}},
-{n:"GLOVER",d:"Find the Glover",f:function(){return S.found.indexOf(11)>-1}},
+{n:"Beyond Omega",d:"Find an Eternal",f:function(){return S.found.indexOf(11)>-1}},
+{n:"Infinite",d:"Find an Infinity",f:function(){return S.found.indexOf(13)>-1}},
+{n:"Paradise",d:"Find Eden",f:function(){return S.found.indexOf(14)>-1}},
+{n:"GLOVER",d:"Find the Glover",f:function(){return S.found.indexOf(15)>-1}},
 {n:"Mutation Hunter",d:"Find 3 mutations",f:function(){return Object.keys(S.mut).length>=3}},
 {n:"Collector",d:"Own 10 cards",f:function(){return S.cards.length>=10}},
 {n:"Upgrade Junkie",d:"Reach Luck level 15",f:function(){return S.luck>=15}},
 {n:"Evolved",d:"Evolve once",f:function(){return S.evo>=1}},
 {n:"Regular",d:"Play 3 days in a row",f:function(){return (S.streak||0)>=3}},
-{n:"Dedicated",d:"Play 7 days in a row",f:function(){return (S.streak||0)>=7}}];
+{n:"Dedicated",d:"Play 7 days in a row",f:function(){return (S.streak||0)>=7}},
+{n:"Mad Scientist",d:"Reach Mutation Lab level 10",f:function(){return (S.mlab||0)>=10}},
+{n:"Case Hoarder",d:"Open 25,000 cases",f:function(){return S.rolls>=25000}},
+{n:"Card Shark",d:"Own 50 cards",f:function(){return S.cards.length>=50}},
+{n:"Primordial Pull",d:"Find a Primordial",f:function(){return S.found.indexOf(12)>-1}},
+{n:"Ascended",d:"Evolve 5 times",f:function(){return S.evo>=5}}];
 function ach(){S.ach=S.ach||[];var nw=[];ACH.forEach(function(a){if(S.ach.indexOf(a.n)<0&&a.f()){S.ach.push(a.n);nw.push(a.n)}});
-if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+" (+3% luck each)","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
-$("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days · each achievement adds +3% permanent luck";
+if(nw.length){say("🏅 Achievement unlocked: "+nw.join(", ")+" (+2% luck each)","#ffd23f");snd(880,.2,"triangle",.1);snd(1175,.3,"triangle",.1,.15);stats();save()}
+$("acount").textContent="· "+S.ach.length+"/"+ACH.length;$("strk").textContent="🔥 Daily streak: "+(S.streak||0)+" days · each achievement adds +2% permanent luck";
 $("ach").innerHTML=ACH.map(function(a){var on=S.ach.indexOf(a.n)>-1;return '<div class="'+(on?"on":"")+'">'+(on?"✅ ":"🔒 ")+esc(a.n)+'<small>'+esc(a.d)+'</small></div>'}).join("")}
 function dkey(t){var d=new Date(t);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
 function daily(){var k=dkey(Date.now());if(S.day===k)return;S.streak=S.day===dkey(Date.now()-864e5)?(S.streak||0)+1:1;S.day=k;dex();save()}
@@ -467,7 +481,7 @@ var o=$("start"),ready=S.day!==dkey(Date.now()),streak=ready?(S.day===dkey(Date.
 for(var i=0;i<TIERS.length;i++)if(S.found.indexOf(i)<0){nx=i;break}
 if(ready&&streak>1)hook="🔥 Day "+streak+" streak! Keep it going.";
 
-else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/60)+" is building. A Mythic is overdue…";
+else if((S.pm||0)>=50)hook="🔥 Pity ×"+xf(1+(S.pm||0)/80)+" is building. A Mythic is overdue…";
 else hook=nx<0?"You’ve found every tier. Chase mutations and cards!":"Next tier to discover: ??? · "+oddsText(TIERS[nx].o);
 o.innerHTML='<h1>🧬 Chromosome Case</h1><div class="big">🧬</div><div class="chips"><div class="chip">'+short(S.best)+'<small>High score</small></div><div class="chip">'+fmt(S.rolls)+'<small>Cases opened</small></div><div class="chip">'+(S.streak||0)+'🔥<small>Day streak</small></div></div><div class="hook">'+hook+'</div><div class="tiers">'+TIERS.map(function(t,i){return '<i class="'+(S.found.indexOf(i)>-1?"":"no")+'" style="--k:'+t.c+'"></i>'}).join("")+'</div><div class="hint">'+S.found.length+'/'+TIERS.length+' tiers found · '+(S.cards||[]).length+' cards</div><button id="play">▶ PLAY</button><div class="hint">Press SPACE to start</div><div class="by">Made by Jace Glover</div>'}
 function play(){if(started)return;started=true;var o=$("start");o.classList.add("out");setTimeout(function(){o.style.display="none"},550);snd(523,.15,"triangle",.1);snd(784,.25,"triangle",.1,.1);daily()}
@@ -479,7 +493,7 @@ function itm(t,n){return '<div class="it t'+t+'" style="--k:'+TIERS[t].c+'"><spa
 function idle(){$("strip").innerHTML=TIERS.map(function(t,i){return itm(i,t.n)}).join("");$("strip").style.transform="translateX("+(-(6+5*94+44-$("reel").clientWidth/2))+"px)"}
 function spinReel(r,dur,done){
 var st=$("strip"),vw=$("reel").clientWidth,W=44+Math.floor(Math.random()*8),h="",lim=5+Math.min(5,S.luck/6);
-var nmI=(r.k<=8&&Math.random()<.4)?W+(Math.random()<.5?-1:1):-1,nmT=Math.min(10,r.k+2+Math.floor(Math.random()*3));for(var i=0;i<W+8;i++){var t=i===W?r.k:i===nmI?nmT:Math.min(TIERS.length-1,Math.floor(Math.pow(Math.random(),2.4)*lim)),n=TIERS[t].n;if(i===W&&r.md>=0)n=MODS[r.md].n+" "+n;h+=itm(t,n)}
+var nmI=(r.k<=12&&Math.random()<.4)?W+(Math.random()<.5?-1:1):-1,nmT=Math.min(14,r.k+2+Math.floor(Math.random()*3));for(var i=0;i<W+8;i++){var t=i===W?r.k:i===nmI?nmT:Math.min(TIERS.length-1,Math.floor(Math.pow(Math.random(),2.4)*lim)),n=TIERS[t].n;if(i===W&&r.md>=0)n=MODS[r.md].n+" "+n;h+=itm(t,n)}
 st.innerHTML=h;
 var end=6+W*94+44-vw/2+(Math.random()*2-1)*38,t0=performance.now(),last=-1;
 (function f(){var p=Math.min(1,(performance.now()-t0)/dur),x=end*(1-Math.pow(1-p,4));st.style.transform="translateX("+(-x)+"px)";var ix=Math.floor((x+vw/2-6)/94);if(ix!==last){last=ix;tickSound()}if(p<1)requestAnimationFrame(f);else{st.children[W].classList.add("win");if(nmI>-1)setTimeout(function(){say("😱 SO CLOSE! You nearly landed "+TIERS[nmT].n+"!","#ffd23f")},900);done()}})();
